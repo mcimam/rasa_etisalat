@@ -18,6 +18,8 @@ models/
 *.log
 *.json
 *.csv
+.rasa/
+*.dot
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints/
