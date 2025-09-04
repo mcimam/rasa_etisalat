@@ -1,0 +1,34 @@
+version: "3.1"
+
+nlu:
+- intent: ask_question
+  examples: |
+    - I have a question
+    - Can you help me?
+    - I need assistance
+    - I have an issue
+    - I have a problem
+    - I need support
+    - I have a query
+    - I want to ask something
+    - I need help with something
+    - I want to know something
+    - Can you answer a question for me?
+
+- intent: faq/reset-password
+  examples: |
+    - I forgot my password
+    - Reset my password
+    - I can't remember my password
+    - Help me with my password
+    - What to do if I have forgotten my password or user ID?
+    - I am unable to access my account
+
+
+- intent: faq/trouble-login
+  examples: |
+    - I can't log in
+    - I'm unable to log in
+    - Login issues
+    - I am having trouble logging in
+    - Why have I been blocked when attempting to login?

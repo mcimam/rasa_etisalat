@@ -1,0 +1,9 @@
+version: "3.1"
+
+stories:
+- story: user asks a question
+  steps:
+  - intent: ask_question
+  - action: utter_answer_question
+  - intent: faq
+  - action: utter_faq

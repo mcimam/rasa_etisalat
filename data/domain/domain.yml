@@ -1,0 +1,58 @@
+version: "3.1"
+
+slots:
+  fallback_stage:
+    type: text
+    influence_conversation: true
+    initial_value: ""
+    mappings:
+      - type: custom
+
+intents:
+  - greet
+  - goodbye
+  - thank
+  - affirm
+  - deny
+  - bot_challenge
+  - ask_question
+  - faq
+  
+
+actions:
+  - action_default_fallback
+
+responses:
+  utter_answer_question:
+  - text: "Sure, I can help you with that."
+  - text: "What specific question do you have?"
+  - text: "Please provide more details about your question."
+
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+
+  utter_faq/reset-password:
+    - text: "No worries, we've got you! Please follow this link to reset your password or recover your user ID: https://otewww2.nic.ae/content.jsp?action=Pass"
+    - text: "No worries! You can reset your account here: https://otewww2.nic.ae/content.jsp?action=Pass"
+  utter_faq/trouble-login:
+    - text: "If you enter the wrong user ID or password, authentication will fail and you will not be able to login to the Registrant Panel. On the 15th failed login attempt, your account will be blocked for security."
+
+  utter_greet:
+  - text: "Hello! How can I assist you today?"
+
+  utter_goodbye:
+  - text: "Bye! Have a nice day!"
+
+  utter_thank:
+  - text: "You're welcome!"
+  - text: "No problem!"
+  - text: "Glad I could help!"
+  - text: "Anytime!"
+  - text: "Happy to assist!"
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
