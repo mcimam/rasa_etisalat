@@ -24,7 +24,6 @@ nlu:
     - What to do if I have forgotten my password or user ID?
     - I am unable to access my account
 
-
 - intent: faq/trouble-login
   examples: |
     - I can't log in
@@ -32,3 +31,51 @@ nlu:
     - Login issues
     - I am having trouble logging in
     - Why have I been blocked when attempting to login?
+
+- intent: faq/dns_a_record
+  examples: |
+    - What is a DNS A record?
+    - Can you explain DNS A records?
+    - I need information about A records in DNS.
+    - How do I set up a DNS A record?
+    - What is the purpose of a DNS A record?
+
+- intent: faq/dns_txt_record
+  examples: |
+    - What is a DNS TXT record?
+    - Can you explain DNS TXT records?
+    - I need information about TXT records in DNS.
+    - How do I set up a DNS TXT record?
+    - What is the purpose of a DNS TXT record?
+
+- intent: faq/dns_mx_record
+  examples: |
+    - What is a DNS MX record?
+    - Can you explain DNS MX records?
+    - I need information about MX records in DNS.
+    - How do I set up a DNS MX record?
+    - What is the purpose of a DNS MX record?
+
+- intent: faq/dns_cname_record
+  examples: |
+    - What is a DNS CNAME record?
+    - Can you explain DNS CNAME records?
+    - I need information about CNAME records in DNS.
+    - How do I set up a DNS CNAME record?
+    - What is the purpose of a DNS CNAME record?
+
+- intent: faq/dns_srv_record
+  examples: |
+    - What is a DNS SRV record?
+    - Can you explain DNS SRV records?
+    - I need information about SRV records in DNS.
+    - How do I set up a DNS SRV record?
+    - What is the purpose of a DNS SRV record?
+
+- intent: faq/dns_name_server
+  examples: |
+    - What is a DNS name server?
+    - Can you explain DNS name servers?
+    - I need information about name servers in DNS.
+    - How do I set up a DNS name server?
+    - What is the purpose of a DNS name server?

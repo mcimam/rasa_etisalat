@@ -34,8 +34,27 @@ responses:
   utter_faq/reset-password:
     - text: "No worries, we've got you! Please follow this link to reset your password or recover your user ID: https://otewww2.nic.ae/content.jsp?action=Pass"
     - text: "No worries! You can reset your account here: https://otewww2.nic.ae/content.jsp?action=Pass"
+
   utter_faq/trouble-login:
     - text: "If you enter the wrong user ID or password, authentication will fail and you will not be able to login to the Registrant Panel. On the 15th failed login attempt, your account will be blocked for security."
+
+  utter_faq/dns_a_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MNS to see the procedure on modifying domain name servers."
+
+  utter_faq/dns_txt_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MTXT to see the procedure on how to manage the TXT records of your domain names."
+  
+  utter_faq/dns_mx_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MMXR to see the procedure on how to manage the MX records of your domain names."
+
+  utter_faq/dns_cname_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MCNM to see the procedure on how to manage the CNAME records of your domain names."
+
+  utter_faq/dns_srv_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MSRV to see the procedure on how to manage the SRV records of your domain names."
+  
+  utter_faq/dns_name_server:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MURL to see the procedure on how to forward your domain."
 
   utter_greet:
   - text: "Hello! How can I assist you today?"
