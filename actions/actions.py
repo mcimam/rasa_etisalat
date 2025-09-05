@@ -12,6 +12,8 @@ from rasa_sdk.events import ConversationPaused, UserUtteranceReverted, SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 
 TOKEN_OPERATOR = "#ask_operator"
+TOKEN_TICKET = "#ticket"
+TOKEN_PIN = "#pin"
 
 class ActionDefaultFallback(Action):
     def name(self) -> Text:
@@ -22,17 +24,35 @@ class ActionDefaultFallback(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         dispatcher.utter_message(text="I am passing you to a human...")
+        dispatcher.utter_message(text=TOKEN_OPERATOR)
         return [ConversationPaused(), UserUtteranceReverted()]
 
         # fallback_stage = tracker.get_slot("fallback_stage") or "none"
 
-        # if fallback_stage == "none":
-        #     dispatcher.utter_message(text="Sorry, I didn't quite get that. Could you please rephrase?")
-        #     return [UserUtteranceReverted(), SlotSet("fallback_stage", "asked_rephrase")]
+class ActionSubmitTicket(Action):
+    def name(self) -> Text:
+        return "action_submit_ticket"
 
-        # elif fallback_stage == "asked_rephrase":
-        #     dispatcher.utter_message(text="Still not sure I understand. Would you like to talk to a human?")
-        #     return [SlotSet("fallback_stage", "asked_handoff")]
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        # else:
-        #     return []
+        # Here you can add your logic to submit the ticket
+        # For example, you might want to send the ticket data to an external system
+
+        dispatcher.utter_message(text="Your ticket has been submitted successfully!")
+        dispatcher.utter_message(text=TOKEN_TICKET)
+        return [SlotSet(key="customer_issue", value=None)]
+
+
+class ActionPin(Action):
+    def name(self) -> Text:
+        return "action_pin"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text="Verifying your PIN, please wait...")
+        dispatcher.utter_message(text=TOKEN_PIN)
+        return [ConversationPaused()]

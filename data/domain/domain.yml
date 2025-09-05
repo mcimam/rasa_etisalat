@@ -1,26 +1,84 @@
 version: "3.1"
 
+entities:
+  - customer_email
+  - customer_issue
+  - customer_pin
+
 slots:
-  fallback_stage:
+  customer_email:
     type: text
     influence_conversation: true
-    initial_value: ""
     mappings:
-      - type: custom
+      - type: from_entity
+        entity: customer_email
+    
+  customer_issue:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: customer_issue
+        conditions:
+        - active_loop: ticket_form
+          requested_slot: customer_issue
+      - type: from_text
+        intent: inform
+        conditions:
+        - active_loop: ticket_form
+          requested_slot: customer_issue
+
+  customer_pin:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: customer_pin
+        intent: inform_pin
+        conditions:
+        - active_loop: pin_form
+          requested_slot: customer_pin
+
+
+forms:
+  ticket_form:
+    required_slots:
+      - customer_email
+      - customer_issue
+
+  pin_form:
+    required_slots:
+      - customer_email
+      - customer_pin
 
 intents:
-  - greet
-  - goodbye
-  - thank
   - affirm
-  - deny
-  - bot_challenge
   - ask_question
-  - faq
-  
+  - bot_challenge
+  - create_ticket
+  - deny
+  - faq:
+      is_retrieval_intent: true
+  - goodbye
+  - greet
+  - inform
+  - inform_pin
+  - thank
+  - request_personal_info
+  - out_of_scope
 
 actions:
   - action_default_fallback
+  - action_submit_ticket
+  - action_pin
+  - utter_ask_customer_email
+  - utter_ask_customer_issue
+  - utter_faq
+  - utter_greet
+  - utter_goodbye
+  - utter_out_of_scope
+  - utter_thank
+  - utter_ticket_slots
 
 responses:
   utter_answer_question:
@@ -31,30 +89,20 @@ responses:
   utter_ask_rephrase:
   - text: I'm sorry, I didn't quite understand that. Could you rephrase?
 
-  utter_faq/reset-password:
-    - text: "No worries, we've got you! Please follow this link to reset your password or recover your user ID: https://otewww2.nic.ae/content.jsp?action=Pass"
-    - text: "No worries! You can reset your account here: https://otewww2.nic.ae/content.jsp?action=Pass"
-
-  utter_faq/trouble-login:
-    - text: "If you enter the wrong user ID or password, authentication will fail and you will not be able to login to the Registrant Panel. On the 15th failed login attempt, your account will be blocked for security."
-
-  utter_faq/dns_a_record:
-    - text: "Click https://otewww2.nic.ae/content.jsp?action=MNS to see the procedure on modifying domain name servers."
-
-  utter_faq/dns_txt_record:
-    - text: "Click https://otewww2.nic.ae/content.jsp?action=MTXT to see the procedure on how to manage the TXT records of your domain names."
+  utter_ask_customer_email:
+    - text: "Could you please provide your email address?"
+    - text: "Could you share your email ?"
+    - text: "May I have your email address?"
   
-  utter_faq/dns_mx_record:
-    - text: "Click https://otewww2.nic.ae/content.jsp?action=MMXR to see the procedure on how to manage the MX records of your domain names."
+  utter_ask_customer_issue:
+    - text: "Could you describe your issue ?"
+    - text: "Please provide details about the issue you're facing."
+    - text: "Can you tell me more about the problem?"
 
-  utter_faq/dns_cname_record:
-    - text: "Click https://otewww2.nic.ae/content.jsp?action=MCNM to see the procedure on how to manage the CNAME records of your domain names."
-
-  utter_faq/dns_srv_record:
-    - text: "Click https://otewww2.nic.ae/content.jsp?action=MSRV to see the procedure on how to manage the SRV records of your domain names."
-  
-  utter_faq/dns_name_server:
-    - text: "Click https://otewww2.nic.ae/content.jsp?action=MURL to see the procedure on how to forward your domain."
+  utter_ask_customer_pin:
+    - text: "Please provide your PIN."
+    - text: "Can you share your PIN?"
+    - text: "May I have your PIN?"
 
   utter_greet:
   - text: "Hello! How can I assist you today?"
@@ -62,13 +110,18 @@ responses:
   utter_goodbye:
   - text: "Bye! Have a nice day!"
 
+  utter_out_of_scope:
+  - text: "I'm sorry, I can't assist with that request."
+
+  utter_ticket_slots:
+  - text: "Here are the details of ticket you provided:\n- Email: {customer_email}"
+
   utter_thank:
   - text: "You're welcome!"
   - text: "No problem!"
   - text: "Glad I could help!"
   - text: "Anytime!"
   - text: "Happy to assist!"
-
 
 
 session_config:
