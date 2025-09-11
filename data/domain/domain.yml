@@ -4,6 +4,7 @@ entities:
   - customer_email
   - customer_issue
   - customer_pin
+  - issue_category
 
 slots:
   customer_email:
@@ -39,6 +40,21 @@ slots:
         - active_loop: pin_form
           requested_slot: customer_pin
 
+  issue_category:
+    type: categorical
+    values:
+      - domain
+      - hosting
+      - website
+      - other
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: issue_category
+        intent: inform_issue_category
+        conditions:
+        - active_loop: operator_form
+          requested_slot: issue_category    
 
 forms:
   ticket_form:
@@ -51,8 +67,13 @@ forms:
       - customer_email
       - customer_pin
 
+  operator_form:
+    required_slots:
+      - issue_category
+
 intents:
   - affirm
+  - ask_operator
   - ask_question
   - bot_challenge
   - create_ticket
@@ -63,16 +84,20 @@ intents:
   - greet
   - inform
   - inform_pin
+  - inform_issue_category
   - thank
   - request_personal_info
   - out_of_scope
 
 actions:
+  - action_call_operator
+  - action_confirm_operator
   - action_default_fallback
   - action_submit_ticket
   - action_pin
   - utter_ask_customer_email
   - utter_ask_customer_issue
+  - utter_ask_issue_category
   - utter_faq
   - utter_greet
   - utter_goodbye
@@ -103,6 +128,9 @@ responses:
     - text: "Please provide your PIN."
     - text: "Can you share your PIN?"
     - text: "May I have your PIN?"
+  
+  utter_ask_issue_category:
+    - text: "One is your issue (billing/domain/website/other)?"
 
   utter_greet:
   - text: "Hello! How can I assist you today?"

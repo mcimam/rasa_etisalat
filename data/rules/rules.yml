@@ -53,3 +53,32 @@ rules:
   steps:
   - intent: out_of_scope
   - action: utter_out_of_scope
+
+- rule: Handle confirmation after fallback
+  steps:
+  - action: action_default_fallback
+  - intent: affirm
+  - action: action_confirm_operator
+
+- rule: Handle denial after fallback
+  steps:
+  - action: action_default_fallback
+  - intent: deny
+  - action: action_confirm_operator
+
+- rule: activate operator form
+  steps:
+  - intent: ask_operator
+  - action: operator_form
+  - active_loop: operator_form
+
+- rule: submit operator form
+  condition:
+  - active_loop: operator_form
+  steps:
+  - action: operator_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_call_operator
+

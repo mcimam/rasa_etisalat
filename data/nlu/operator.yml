@@ -1,0 +1,31 @@
+version: "3.1"
+
+nlu:
+  - intent: ask_operator
+    examples: |
+      - I want to talk to an operator
+      - Can I speak to a human agent?
+      - I need help from a real person
+      - Connect me to customer support
+      - I want to chat with a representative
+      - Please transfer me to an agent
+      - I need assistance from a human
+      - Can you connect me to someone?
+      - I would like to speak with support staff
+      - Put me in touch with a customer service agent
+      - I want to escalate this issue to a human
+      - I need to talk to someone about my problem
+      - Can you get me in contact with an operator?
+      - I prefer to speak with a live agent
+      - Please connect me to technical support
+      - I want to reach out to customer service
+
+  - intent: inform_issue_category
+    examples: |
+      - [billing](issue_category)
+      - [website](issue_category)
+      - [domain](issue_category)
+      - my issue is with [hosting](issue_category)
+      - it's [billing](issue_category)
+      - [billing](issue_category) issue
+      - [domain](issue_category) problem
