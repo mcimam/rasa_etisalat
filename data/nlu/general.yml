@@ -67,6 +67,22 @@ nlu:
     - don't like that
     - no way
     - not really
+    - cancel
+
+- intent: stop
+  examples: |
+    - stop
+    - end
+    - quit
+    - exit
+    - cancel
+    - never mind
+    - forget about it
+    - I want to stop
+    - forget it
+    - exit the process
+
+
 
 - intent: bot_challenge
   examples: |

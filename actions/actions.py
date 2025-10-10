@@ -8,7 +8,7 @@
 from typing import Any, Dict, List, Text
 
 from rasa_sdk import Action, FormValidationAction, Tracker
-from rasa_sdk.events import ConversationPaused, UserUtteranceReverted, SlotSet, FollowupAction
+from rasa_sdk.events import ActionExecuted, ConversationPaused, UserUtteranceReverted, SlotSet, FollowupAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.types import DomainDict
 
@@ -24,8 +24,11 @@ class ActionDefaultFallback(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        dispatcher.utter_message(text="I'm sorry, I didn't understand that")
-        dispatcher.utter_message(text="Would you like to speak to a human operator? (yes/no)")
+        dispatcher.utter_message(text="I'm sorry, I didn't understand that.")
+        active_form = tracker.active_loop.get("name")
+        print(f"Active form: {active_form}")
+        if not active_form:
+            dispatcher.utter_message(text="Would you like to speak to a human operator? (yes/no)")
 
         return []
 
@@ -57,8 +60,10 @@ class ActionCallOperator(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        customer_email = tracker.get_slot("customer_email")
+
         dispatcher.utter_message(text="Connecting to Operator....")
-        dispatcher.utter_message(json_message={"token": TOKEN_OPERATOR, "category": tracker.get_slot('issue_category')})
+        dispatcher.utter_message(json_message={"token": TOKEN_OPERATOR, "category": tracker.get_slot('issue_category'), "email": customer_email})
         return [ConversationPaused()]
 
 
@@ -73,8 +78,10 @@ class ActionSubmitTicket(Action):
         # Here you can add your logic to submit the ticket
         # For example, you might want to send the ticket data to an external system
 
+        customer_email = tracker.get_slot("customer_email")
+
         dispatcher.utter_message(text="Your ticket has been submitted successfully!")
-        dispatcher.utter_message(json_message={"token": TOKEN_TICKET})
+        dispatcher.utter_message(json_message={"token": TOKEN_TICKET, "email": customer_email})
         return [SlotSet(key="customer_issue", value=None)]
 
 

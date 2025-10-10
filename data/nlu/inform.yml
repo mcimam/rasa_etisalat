@@ -1,0 +1,60 @@
+version: "3.1"
+
+nlu:
+  - intent: inform_issue_category
+    examples: |
+      - [billing](issue_category)
+      - [website](issue_category)
+      - [domain](issue_category)
+      - my issue is with [hosting](issue_category)
+      - it's [billing](issue_category)
+      - [billing](issue_category) issue
+      - [domain](issue_category) problem
+      - [other](issue_category
+      - I have a [website](issue_category) issue
+      - I need help with [hosting](issue_category)
+      - it's [another](issue_category) issue
+      - I have a [different](issue_category) problem
+
+  - intent: inform_pin
+    examples: |
+      - My pin is [1234](customer_pin)
+      - It's [5678](customer_pin)
+      - The pin is [91011](customer_pin)
+      - [1213](customer_pin) is my pin
+      - [A123](customer_pin)
+      - My PIN code is [B456](customer_pin)
+      - You can use [78X9](customer_pin)
+      - Please note my pin: [XY99](customer_pin)
+      - The access code is [9Z9Z](customer_pin)
+      - [K1L2](customer_pin) is what I use
+      - It's [PIN9](customer_pin)
+      - I use [CODE7](customer_pin)
+      - Enter [0Z0Z](customer_pin) for me
+      - I usually use [AB12](customer_pin)
+      - Try [88A8](customer_pin)
+      - Use [123X](customer_pin)
+
+  - intent: inform_email
+    examples: |
+      - [a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+
+      - My email is [user@example.com](customer_email)
+      - You can contact me at [john.doe@domain.co.au](customer_email)
+      - Please reach out to me at [jane.smith@domain.co.us](customer_email)
+      - [test@gmail.com](customer_email)
+      - [jonathan@outlook.com](customer_email)
+      - [alice@yahoo.com](customer_email)
+      - [mail@etisalat.com](customer_email)
+      - [test123.c@domain.com](customer_email)
+      - [example@mplus.software](customer_email)
+      - [support.123@comp4ny.com](customer_email)
+      - [aniss.roslee@web.plus](customer_email)
+      - Here is my email: [info@company.io](customer_email)
+      - Send the details to [hello@startup.tech](customer_email)
+      - Drop me a line at [team@mybiz.org](customer_email)
+      - Use [contact@my-page.net](customer_email) to reach me
+      - Reach me on [first.last@edu.university.edu](customer_email)
+      - My contact is [demo_user123@company.in](customer_email)
+      - You can email me via [connect@portal.co.uk](customer_email)
+      - [ceo@mycompany.biz](customer_email) is my address
+      - [services@consulting.pro](customer_email) is best

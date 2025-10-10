@@ -9,29 +9,24 @@ entities:
 slots:
   customer_email:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: customer_email
     
   customer_issue:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
-      - type: from_entity
-        entity: customer_issue
-        conditions:
-        - active_loop: ticket_form
-          requested_slot: customer_issue
       - type: from_text
-        intent: inform
         conditions:
         - active_loop: ticket_form
           requested_slot: customer_issue
 
+
   customer_pin:
     type: text
-    influence_conversation: true
+    influence_conversation: false
     mappings:
       - type: from_entity
         entity: customer_pin
@@ -69,6 +64,7 @@ forms:
 
   operator_form:
     required_slots:
+      - customer_email
       - issue_category
 
 intents:
@@ -82,12 +78,13 @@ intents:
       is_retrieval_intent: true
   - goodbye
   - greet
-  - inform
+  - inform_email
   - inform_pin
   - inform_issue_category
   - thank
   - request_personal_info
   - out_of_scope
+  - stop
 
 actions:
   - action_call_operator
@@ -130,7 +127,7 @@ responses:
     - text: "May I have your PIN?"
   
   utter_ask_issue_category:
-    - text: "One is your issue (billing/domain/website/other)?"
+    - text: "What is your issue (billing/domain/website/other)?"
 
   utter_greet:
   - text: "Hello! How can I assist you today?"
@@ -150,6 +147,9 @@ responses:
   - text: "Glad I could help!"
   - text: "Anytime!"
   - text: "Happy to assist!"
+
+  utter_form_cancelled:
+    - text: "Okay, I've cancelled that for you."
 
 
 session_config:
