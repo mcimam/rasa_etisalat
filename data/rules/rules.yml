@@ -72,6 +72,13 @@ rules:
   - action: operator_form
   - active_loop: operator_form
 
+- rule: deactivate operator form
+  steps:
+    - intent: stop
+    - action: action_deactivate_loop
+    - action: utter_form_cancelled  # optional custom message
+
+
 - rule: submit operator form
   condition:
   - active_loop: operator_form
