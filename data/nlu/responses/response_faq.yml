@@ -1,0 +1,850 @@
+version: "3.1"
+
+responses:
+  utter_faq/reset-password:
+    - text: "No worries, we've got you! Please follow this link to reset your password or recover your user ID: https://otewww2.nic.ae/content.jsp?action=Pass"
+    - text: "No worries! You can reset your account here: https://otewww2.nic.ae/content.jsp?action=Pass"
+
+  utter_faq/trouble-login:
+    - text: "If you enter the wrong user ID or password, authentication will fail and you will not be able to login to the Registrant Panel. On the 15th failed login attempt, your account will be blocked for security."
+
+  utter_faq/dns_a_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MNS to see the procedure on modifying domain name servers."
+
+  utter_faq/dns_txt_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MTXT to see the procedure on how to manage the TXT records of your domain names."
+
+  utter_faq/dns_mx_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MMXR to see the procedure on how to manage the MX records of your domain names."
+
+  utter_faq/dns_cname_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MCNM to see the procedure on how to manage the CNAME records of your domain names."
+
+  utter_faq/dns_srv_record:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MSRV to see the procedure on how to manage the SRV records of your domain names."
+
+  utter_faq/dns_name_server:
+    - text: "Click https://otewww2.nic.ae/content.jsp?action=MURL to see the procedure on how to forward your domain."
+
+  # --- General Web Hosting ---
+  utter_faq/file_restrictions:
+    - text: "Hosting plans are intended for **website files only**. Using your hosting space for bulk file storage, personal backups, or file-sharing services is generally not permitted."
+  utter_faq/exceed_limits:
+    - text: "If your site exceeds its allocated resources (disk space or bandwidth), your account may be **temporarily suspended**, or you might be prompted to **upgrade your plan** to accommodate the higher usage."
+  utter_faq/cloud_storage_backup:
+    - text: "No, shared hosting accounts are designed specifically for hosting website content. Services for **personal file storage or backups are not allowed**."
+
+  # --- Plesk Control Panel ---
+  utter_faq/plesk_login:
+    - text: "You can typically log in by navigating to **https://yourdomain.com:8443** in your web browser and entering the username and password provided by your hosting provider."
+  utter_faq/change_php_version:
+    - text: "Go to **Websites & Domains**, find your domain, and click on **PHP Settings**. From there, you can select your desired PHP version from the dropdown menu. This process is the same for both Linux and Windows hosting."
+  utter_faq/upload_files:
+    - text: "You can use the **File Manager**. Go to **Websites & Domains** and click on **Files**. Navigate to the **httpdocs** directory, which is the main folder for your website content. You can use the `+` button to upload files or archives."
+
+  # --- Database Management ---
+  utter_faq/manage_database_web_interface:
+    - text: "From the **Databases** screen, click on the **management tool icon** for your database. On Linux (MySQL/MariaDB), this will open **phpMyAdmin**."
+  utter_faq/export_import_database:
+    - text: "Inside the database management tool (like phpMyAdmin), use the **Export** function to download a `.sql` backup file. To restore it, use the **Import** function and upload the `.sql` file."
+  utter_faq/database_connection_details:
+    - text: "Go to **Websites & Domains > Databases**. Click on **Connection Info** for the specific database to see the **hostname, database name, and username** required for your website's configuration file."
+
+  # --- Security & Access ---
+  utter_faq/install_lets_encrypt_ssl:
+    - text: "1. Go to **Websites & Domains** and click **SSL/TLS Certificates**.\n2. Click **Install** under 'Install a free basic certificate provided by Let's Encrypt'.\n3. Provide an email and select options to secure the 'www' subdomain and webmail. Click **Get it free**.\n4. After installation, go to **Hosting Settings** and enable the **Permanent SEO-safe 301 redirect from HTTP to HTTPS**."
+
+  # --- Backup & Restore ---
+  utter_faq/schedule_automatic_backups:
+    - text: "Yes. In the **Backup & Restore** section, go to the **Schedule tab**. You can enable scheduled backups and configure the frequency (e.g., daily or weekly), time, and what content to include."
+  utter_faq/restore_from_backup:
+    - text: "In **Backup & Restore**, click on the backup you wish to restore, select the **components** you want to recover (e.g., specific files or a database), and click **Restore**."
+
+  # --- Website Builder & CMS ---
+  utter_faq/manage_wordpress_themes_plugins:
+    - text: "The **WordPress Toolkit** provides a **central dashboard** to install, activate, deactivate, and update all themes and plugins across your WordPress sites **without needing to log in to each one individually**."
+
+  # --- Account & Billing ---
+  utter_faq/change_plesk_password:
+    - text: "Click on your **username in the top-right corner**, go to **My Profile**, and you will find the option to change your password."
+
+  utter_faq/create_delete_user_account:
+    - text: "Go to the **Users tab** in the left sidebar and click **Create User Account**. To delete a user, select them from the list and click **Remove**."
+
+  utter_faq/account_suspended:
+    - text: "Accounts are typically suspended for **exceeding resource limits** (disk space, bandwidth) or for **policy violations**. You should receive a notification explaining the reason."
+
+  utter_faq/unsuspend_account:
+    - text: "You will need to **resolve the issue** that caused the suspension (e.g., free up disk space, upgrade your plan) and then **contact your hosting provider**."
+
+  utter_faq/find_document_root:
+    - text: "You can see your primary document root by going to **Websites & Domains** and clicking **Files**."
+
+  # --- Resource Usage & Policies ---
+  utter_faq/fair_usage_policy:
+    - text: "It's a policy to ensure server resources (CPU, RAM, bandwidth) are distributed **fairly among all users** on a shared server, preventing one site from impacting others."
+
+  utter_faq/overuse_policy:
+    - text: "It's a setting determined by your provider that dictates what happens when you reach a resource limit. Options are: 'Overuse is not allowed' (**suspension**), 'Overuse of disk and traffic allowed,' or 'Overuse allowed.'"
+
+  utter_faq/check_current_resource_usage:
+    - text: "On the right sidebar of the main **Websites & Domains** page, there is a **Resource Usage** section. For more details, you can go to the **Statistics tab**."
+
+  utter_faq/resource_limits_soon:
+    - text: "This is a **warning** from Plesk that your usage is approaching its limit for a specific resource (like CPU or RAM), and you should **investigate to prevent a potential suspension**."
+
+  utter_faq/check_disk_bandwidth_limits:
+    - text: "These limits are typically displayed on the main **Websites & Domains** page or within the **Account** section of your panel."
+
+  utter_faq/what_is_traffic:
+    - text: "**Traffic** is the **monthly bandwidth limit**, which is the amount of data transferred to and from your website."
+
+  # --- File Management ---
+  utter_faq/httpdocs_directory:
+    - text: "This is the **main folder (the document root)** where your website's public files must be placed to be visible on the internet."
+
+  utter_faq/password_protect_directory:
+    - text: "Go to **Websites & Domains > Password-Protected Directories**. Click **Add Protected Directory**, specify the path, and create authorized users."
+
+  utter_faq/fix_file_permissions:
+    - text: "If your site shows permission errors, you can try using the Plesk repair utility. Go to **Websites & Domains > Check & Repair**. If that doesn't work, you may need to contact support."
+
+  utter_faq/correct_permissions_linux:
+    - text: "Typically, folders should be set to **755** and files to **644**. This allows the owner to read/write/execute, and others to only read/execute."
+
+  utter_faq/edit_files_in_plesk:
+    - text: "Yes, the **File Manager** includes a built-in **text editor** that allows you to edit code files, HTML, and text files directly."
+
+  utter_faq/upload_extract_zip:
+    - text: "In the **File Manager**, use the **Upload** button to upload the ZIP file. Then, select the file and click the **Extract Files** button."
+
+  # --- Database Management (Cont.) ---
+  utter_faq/create_new_database:
+    - text: "Go to **Websites & Domains > Databases > Add Database**. Provide a name, create a database user, and set a strong password."
+
+  utter_faq/remote_database_access:
+    - text: "This depends on your hosting provider's policy. If allowed, you'll need to go to **Databases > Remote Access** (or similar) and **add your computer's IP address** to the access list."
+
+  utter_faq/change_database_user_password:
+    - text: "Go to **Databases**, click on the **Users tab**, select the user, and you can set a new password."
+
+  # --- Security (Cont.) ---
+  utter_faq/force_https:
+    - text: "Go to **Websites & Domains > Hosting & DNS > Hosting Settings**. Enable the option **Permanent SEO-safe 301 redirect from HTTP to HTTPS**."
+
+  utter_faq/lets_encrypt_renewal:
+    - text: "You don't have to do anything. Plesk **automatically renews** the certificate for you every 30-60 days, well before its 90-day expiration."
+
+  utter_faq/enable_mfa:
+    - text: "Click your **username in the top right**, go to **My Profile > MFA Settings**, and scan the QR code with an authenticator app like Google Authenticator."
+
+  utter_faq/what_is_imunify360:
+    - text: "**Imunify360** is a comprehensive security suite that often includes **antivirus scanning, a firewall, and proactive defense**. If it's installed, it helps protect your site from malware and attacks."
+
+  utter_faq/imunify360_scan_frequency:
+    - text: "It typically runs **automatic daily scans** for new malware definitions and performs regular checks on your website files."
+
+  # --- Backups & Restoration (Cont.) ---
+  utter_faq/create_manual_backup:
+    - text: "Go to **Websites & Domains > Backup & Restore** (or Backup Manager). Click **Back Up**, choose what to include (files, databases, mail), and click **OK**."
+
+  utter_faq/where_are_backups_stored:
+    - text: "They can be stored on the server itself (internal Plesk storage) or in a **remote location** like an FTP server or cloud storage, depending on what your provider has configured."
+
+  utter_faq/full_vs_incremental_backup:
+    - text: "A **Full backup** contains all your data. An **Incremental backup** contains only the data that has changed since the last full backup, which **saves space and time**."
+
+  utter_faq/download_backup:
+    - text: "Yes, from the **Backup & Restore** list, you can click the **download icon** for any backup stored on the server."
+
+  utter_faq/password_protect_backups:
+    - text: "Yes, Plesk allows you to set a **password for backups**, especially when storing them in a remote location."
+
+  # --- Applications & Development ---
+  utter_faq/install_other_applications:
+    - text: "Go to the **Applications tab** in the left sidebar. You can find and install many popular applications like Joomla or Drupal with a **one-click process**."
+
+  utter_faq/install_nodejs:
+    - text: "If the **Node.js extension** is installed by your provider, you can enable it for your domain under **Websites & Domains > Node.js**."
+
+  utter_faq/deploy_aspnet:
+    - text: "You can upload your application files via **File Manager or FTP** to the **httpdocs** directory. Plesk will automatically detect and run it."
+
+
+  utter_faq/use_git_to_deploy:
+    - text: "If the **Git extension** is enabled, go to **Websites & Domains > Git**. You can add a remote repository (like from GitHub or GitLab) and configure **automatic deployment**."
+
+  # --- Performance & Troubleshooting ---
+  utter_faq/503_service_unavailable:
+    - text: "This error means the server is **temporarily unable to handle the request**. On Windows, it's often because your site's IIS Application Pool has stopped. On Linux, it could be the web server or PHP service being overloaded or down."
+
+  utter_faq/fix_503_windows:
+    - text: "Go to **Websites & Domains > Dedicated IIS Application Pool Settings** and click **Recycle**. If the pool is stopped, click **Start**. This resolves the issue most of the time."
+
+  utter_faq/customize_error_pages:
+    - text: "Go to **Websites & Domains > Hosting & DNS > Hosting Settings** and check the box for **Custom error documents**. Then, edit the error pages in the **error_docs** directory using the File Manager."
+
+  utter_faq/find_website_error_logs:
+    - text: "Go to **Websites & Domains > Logs**. This will show you the access and **error logs** for your web server (Apache/Nginx on Linux, IIS on Windows), which are crucial for debugging problems."
+
+  utter_faq/seo_toolkit:
+    - text: "The **SEO Toolkit** is an extension that helps you monitor and improve your site's **search engine optimization** by tracking keywords, analyzing your site, and providing recommendations."
+
+  utter_faq/check_website_traffic_statistics:
+    - text: "Go to **Websites & Domains > Web Statistics**. Plesk provides tools like **AWStats or Webalizer** to view detailed visitor statistics."
+
+  # --- Scheduled Tasks (Cron Jobs) ---
+  utter_faq/what_are_scheduled_tasks:
+    - text: "Scheduled Tasks (known as '**cron jobs**' on Linux) allow you to **automate the execution of scripts or commands** on your server at a specific time or interval."
+
+  utter_faq/create_scheduled_task:
+    - text: "Go to **Websites & Domains > Scheduled Tasks** (you may need to click 'Show More'). Click **Add Task** to configure a new job."
+
+  utter_faq/task_types:
+    - text: "Plesk offers three main task types:\n1. **Run a command** (system command/shell script).\n2. **Fetch a URL** (makes a web request to trigger a script).\n3. **Run a PHP script** (directly executes a PHP script)."
+
+  utter_faq/set_task_schedule:
+    - text: "You can use predefined schedules like 'Daily' or 'Weekly,' or use '**Cron style**' syntax for more granular control (e.g., `*/15 * * * *` means 'run every 15 minutes')."
+
+  utter_faq/task_success_status:
+    - text: "When configuring the task, you can set up **email notifications**. Plesk can email you the output of the command or notify you only if it fails."
+
+  utter_faq/task_run_user:
+    - text: "Tasks run under the security context of your subscription's **system user**, not as the server's root administrator."
+
+  utter_faq/disable_scheduled_task:
+    - text: "Yes, in the **Scheduled Tasks** list, you can click the **checkmark** next to a task to **deactivate** it without deleting it."
+
+  # --- Advanced Security Features ---
+  utter_faq/what_is_hotlinking:
+    - text: "**Hotlinking** (or bandwidth theft) is when another website displays an image or file from your server by linking directly to it, using your server's **bandwidth** instead of their own."
+
+  utter_faq/enable_hotlink_protection:
+    - text: "On Windows: Go to **Websites & Domains > Hotlink Protection**. Enable the feature, specify extensions, and add friendly websites.\nFor WordPress: The **WordPress Toolkit** offers a one-click 'Enable hotlink protection' option."
+
+  utter_faq/hotlink_protection_files:
+    - text: "You should protect common media files like **jpg, jpeg, png, gif, bmp, mp3, mp4, and pdf**."
+
+  utter_faq/hotlink_protection_broken_images:
+    - text: "You likely forgot to add **your own domain(s)** to the list of '**friendly websites**.' Make sure all domains and subdomains that need to display the images are whitelisted."
+
+  # --- More Troubleshooting ---
+  utter_faq/403_forbidden_causes:
+    - text: "Common causes of a **403 Forbidden** error include: **incorrect file/folder permissions**, a misconfigured `.htaccess` file, a security plugin blocking access, or a missing index.html/index.php file."
+
+  utter_faq/404_not_found_causes:
+    - text: "This can be caused by incorrect file permissions, an issue with URL rewriting in your `.htaccess` file, or a **case-sensitivity issue** (on Linux servers, `Page.html` is different from `page.html`)."
+
+  utter_faq/500_internal_server_error:
+    - text: "A **500 Internal Server Error** is generic. The first step is to check your website's **error logs** (**Websites & Domains > Logs**) for a more specific message. Common causes are errors in a script or a bad `.htaccess` rule."
+
+  utter_faq/increase_php_timeout:
+    - text: "Go to **Websites & Domains > PHP Settings**. You can modify common parameters like **`max_execution_time`** and **`memory_limit`** there."
+
+  utter_faq/plesk_login_error:
+    - text: "This is usually a server-side issue. It could be that the **Plesk service is down**, or your **IP address has been blocked** by Fail2Ban after too many failed login attempts. Contact your hosting provider."
+
+  utter_faq/website_suddenly_slow:
+    - text: "Check your **resource usage** in Plesk (**Websites & Domains > Resource Usage**). A spike in CPU or RAM could be caused by a faulty plugin, a traffic surge, or a malicious attack. Reviewing your access logs can also help."
+
+  utter_faq/htaccess_down:
+    - text: "A syntax error in the `.htaccess` file will cause a 500 error. Use the **File Manager** to **rename the `.htaccess` file** (e.g., to `.htaccess_bak`) to disable it and get your site back online."
+
+  utter_faq/website_hacked:
+    - text: "1. **Change all your Plesk, FTP, and database passwords** immediately.\n2. **Restore your website from a clean backup** made before the hack occurred.\n3. Contact your hosting provider for assistance."
+
+  # --- Plesk Interface & Customization ---
+  utter_faq/change_plesk_view:
+    - text: "**Power User** view is a simplified interface that puts all your tools on a single screen. **Service Provider** view organizes things by subscriptions and is for administrators/resellers. You can switch views if your provider allows it."
+
+  utter_faq/change_plesk_language:
+    - text: "Yes. Click on your **username in the top-right corner**, go to **My Profile**, and you can select your preferred interface language."
+
+  utter_faq/what_is_advisor:
+    - text: "The Plesk **Advisor** is a tool that scans your server and websites and provides **recommendations** on **security, performance, and SEO** to help you improve your setup."
+
+  utter_faq/manage_multiple_domains:
+    - text: "Yes, if your hosting plan is a '**multi-domain**' or '**reseller**' plan, you can manage all your subscriptions under a single login."
+
+  utter_faq/domain_lock_icon:
+    - text: "A **closed green lock** indicates that your domain is secured with a valid **SSL/TLS certificate** and is accessible via HTTPS. An open or warning icon means there is an issue."
+
+  # --- Platform-Specific Features & Information ---
+  utter_faq/edit_php_ini:
+    - text: "Plesk provides a graphical interface for changing common PHP settings under **PHP Settings**. For more advanced changes, use the 'Additional directives' tab to add custom `php.ini` settings."
+
+  utter_faq/enable_php_extension:
+    - text: "In **PHP Settings**, there is usually a list of available PHP extensions. You can **check the box** next to the one you need to enable it. If it's not on the list, you must ask your hosting provider to install it."
+
+  utter_faq/error_docs_directory:
+    - text: "This folder contains the **HTML files for custom error pages** (like 404 Not Found). You can edit these files to create branded error pages for your visitors."
+
+  utter_faq/ssh_access:
+    - text: "This depends on your hosting plan. If SSH access is enabled, you can find the connection details under **Websites & Domains > Web Hosting Access**."
+
+  utter_faq/composer:
+    - text: "**Composer** is a **dependency manager for PHP**. If your provider has installed the Composer extension, you can manage your project's dependencies directly through the Plesk interface."
+
+  # --- Miscellaneous ---
+  utter_faq/server_ip_address:
+    - text: "Go to **Websites & Domains**. Your website's **IP address** is usually listed next to the domain name."
+
+  utter_faq/grace_suspension_period:
+    - text: "A **grace period** is a short time after expiration where your site remains online. A **suspension period** is when your site is taken offline but the data is not yet deleted. These are set by your provider."
+
+  utter_faq/domain_vs_subscription:
+    - text: "A **subscription** is the hosting account itself, which contains resources like disk space and bandwidth. A subscription can have one or more **domains** (websites) hosted within it."
+
+  utter_faq/plesk_support:
+    - text: "Your **first point of contact** for any issues should be your **hosting provider**. They manage the server and your account."
+
+  #######################################################################
+  #
+  #######################################################################
+
+# --- IIS Application Pool FAQs ---
+  utter_faq/integrated_pipeline_mode:
+    - text: "**Integrated Pipeline Mode** combines IIS and ASP.NET pipelines, allowing unified request handling for all file types (HTML, ASPX, MVC, etc.)."
+  utter_faq/integrated_mode_benefits:
+    - text: "It **improves performance**, supports all modern frameworks, and allows modules like authentication and URL rewriting to apply globally."
+  utter_faq/when_to_choose_integrated_mode:
+    - text: "Use it for **modern applications** built with ASP.NET 4.x, MVC, or .NET Core."
+  utter_faq/classic_pipeline_mode:
+    - text: "**Classic Pipeline Mode** follows the old IIS 6 structure, where only specific file types like `.aspx` are processed by ASP.NET."
+  utter_faq/why_use_classic_mode:
+    - text: "Choose Classic Mode for **older ASP.NET 2.0 or 3.5 apps** that rely on ISAPI filters or legacy event ordering."
+  utter_faq/incompatible_app_integrated_mode:
+    - text: "It may **fail to load certain handlers or modules**. Switch to Classic Mode for stability if errors like 'Handler not found' occur."
+  utter_faq/switch_pipeline_modes:
+    - text: "Go to **Tools & Settings → IIS Application Pool → Managed Pipeline Mode**, then choose **Integrated** or **Classic**."
+  utter_faq/default_pipeline_mode:
+    - text: "**Integrated Mode** is the default and recommended choice for all modern Windows hosting environments."
+
+# --- 503 Error Page Customization FAQs ---
+  utter_faq/503_page_linux_path:
+    - text: "You can find the default 503 error page under `/app/vhosts/.skel/0/error_docs` on Linux Plesk servers."
+  utter_faq/change_503_page_linux:
+    - text: "Replace the file in the `error_docs` folder with your customized **HTML error page**."
+  utter_faq/503_page_windows_path:
+    - text: "On Windows, the 503 template is located at `D:\\hosts\\.skel\\0\\error_docs`."
+  utter_faq/apply_new_503_template:
+    - text: "No. The new template only applies automatically to **newly created domains**."
+  utter_faq/unique_503_page_per_domain:
+    - text: "Yes, but that must be done **manually** from each domain’s `error_docs` directory."
+  utter_faq/revert_original_503_page:
+    - text: "Yes, by **restoring the default template** from Plesk’s system files."
+  utter_faq/what_is_skel_directory:
+    - text: "The **.skel directory** acts as a skeleton that applies default files to **every newly created domain**."
+  utter_faq/method_for_other_error_pages:
+    - text: "Yes. Replace the respective error files (e.g., `404.html`) inside `error_docs`."
+
+# --- Document Root Management FAQs ---
+  utter_faq/default_document_root_path:
+    - text: "By default, all websites are stored in `/var/www/vhosts`."
+  utter_faq/change_document_root_directory:
+    - text: "Edit `/etc/psa/psa.conf` and update the line **`HTTPD_VHOSTS_D`** to your preferred directory (e.g., `/app/vhosts`)."
+  utter_faq/restart_services_document_root_change:
+    - text: "Restart **Plesk and Apache** using: \n`systemctl restart psa`\n`systemctl restart httpd`"
+  utter_faq/move_existing_website_data:
+    - text: "Copy the current vhosts folder using: `cp -avrf /var/www/vhosts /app/vhosts`"
+  utter_faq/create_new_symlink:
+    - text: "Run: `ln -s /app/vhosts /var/www/vhosts`"
+
+# --- Remote Database Hostname Configuration (Windows) ---
+  utter_faq/edit_windows_hosts_file:
+    - text: "Navigate to `C:\\Windows\\System32\\drivers\\etc\\`, open the **hosts file in Notepad**, and add your mappings."
+  utter_faq/hosts_entries_example:
+    - text: "Example mapping: `10.125.64.242 plx-mysql-stg.nic.ae`\n`10.125.64.245 plx-mssql-stg.nic.ae`"
+  utter_faq/why_use_hostnames_db:
+    - text: "Hostnames simplify management and allow **SSL/TLS validation** and easy migration later."
+  utter_faq/configure_hostnames_in_plesk:
+    - text: "Go to **Tools & Settings → Database Servers**, select the database type, and replace the **hostname** field."
+  utter_faq/verify_hostname_resolution:
+    - text: "Run `ping plx-mysql-stg.nic.ae` or `nslookup` from Command Prompt."
+  utter_faq/admin_rights_hosts_file:
+    - text: "Yes, **Notepad must be run as Administrator** to modify and save the file."
+
+# --- Remote Database Hostname Configuration (Linux) ---
+  utter_faq/define_remote_mysql_hostname_linux:
+    - text: "Edit `/etc/vhosts/` and add the hostname mapping manually, e.g., `10.125.64.242 plx-mysql-stg.nic.ae`."
+  utter_faq/configure_hostname_in_plesk_linux:
+    - text: "Log in to Plesk → **Tools & Settings → Database Servers → MySQL → Hostname → Update**."
+  utter_faq/restart_required_hostname_change:
+    - text: "Usually not required, but **restarting Plesk helps apply the change cleanly**."
+  utter_faq/privileges_edit_hostname_file:
+    - text: "**Root or sudo privileges** are required to modify `/etc/vhosts/`."
+
+# --- Database Log Path Configuration (Linux) ---
+  utter_faq/create_db_log_directory:
+    - text: "Run `mkdir -p /app/logs/mysql` to create the directory."
+  utter_faq/set_db_log_permissions:
+    - text: "Set ownership and permissions using:\n`chown mysql:mysql /app/logs/mysql`\n`chmod 750 /app/logs/mysql`"
+  utter_faq/config_file_db_log_path:
+    - text: "`/etc/my.cnf` controls MySQL’s log and PID file paths."
+  utter_faq/set_new_log_directory_config:
+    - text: "Add or modify:\n`log-error=/app/logs/mysql/mariadb.log`\n`pid-file=/app/mysql/mysqld.pid`"
+  utter_faq/restart_db_service:
+    - text: "Run `systemctl restart mariadb` to apply changes."
+  utter_faq/verify_new_log_location:
+    - text: "Use: `tail -f /app/logs/mysql/mariadb.log`"
+  utter_faq/incorrect_log_permissions:
+    - text: "MySQL will fail to start, showing a **'permission denied'** error for the log file."
+  utter_faq/mariadb_compatibility:
+    - text: "Yes, MariaDB and MySQL share the same logging mechanism."
+
+# --- MSSQL Log File Directory (Windows) ---
+  utter_faq/view_mssql_log_path:
+    - text: "In **SQL Server Configuration Manager**, go to **SQL Server (MSSQLSERVER) → Properties → Startup Parameters**. The `-e` parameter specifies the path."
+  utter_faq/create_mssql_log_directory:
+    - text: "Create a folder named `SQLLogs` in `D:\\` and ensure it's accessible to SQL Server."
+  utter_faq/mssql_log_folder_permissions:
+    - text: "Grant **full permissions to `NT Service\\MSSQLSERVER`** under folder security settings."
+  utter_faq/update_mssql_startup_parameter:
+    - text: "Example: `-eD:\\SQLLogs\\ERRORLOG`"
+  utter_faq/verify_new_mssql_log_path:
+    - text: "Check the SQL Server logs in **SQL Server Management Studio → Management → SQL Server Logs**."
+
+# --- Disk Space & Bandwidth Allocation FAQs (Plesk Linux) ---
+  utter_faq/view_all_hosting_plans:
+    - text: "Run: `plesk db -Ne \"SELECT id,name FROM psa.Templates ORDER BY name;\"`"
+  utter_faq/check_plan_limits:
+    - text: "Use: `plesk bin service_plan --info \"Package - 1\" | grep -Ei '^(Disk space|Traffic)'`"
+  utter_faq/check_multiple_plans:
+    - text: "You can use a loop for multiple plans:\n`for p in \"Package - 1\" \"Package - 2\"; do plesk bin service_plan --info \"$p\" | grep -Ei '^(Disk space|Traffic)'; done`"
+  utter_faq/disk_space_meaning:
+    - text: "It shows the allocated storage limit for **files, mail, and databases**."
+  utter_faq/traffic_meaning:
+    - text: "**Traffic** represents the **monthly bandwidth limit** in MB or GB."
+  utter_faq/identify_unlimited_plans:
+    - text: "Look for the keyword **`Unlimited`** under Disk space or Traffic."
+  utter_faq/root_access_cli_commands:
+    - text: "Yes, you must have SSH access with **root privileges**."
+
+# --- Suspended Accounts FAQs (Plesk Windows & Linux) ---
+  utter_faq/plesk_customer_status_codes:
+    - text: "Run `plesk db -Ne \"SELECT DISTINCT status FROM clients;\"`\nThe codes mean: **0 = Active, 16 = Suspended, 64 = Locked**."
+  utter_faq/view_only_suspended_accounts:
+    - text: "Run: `plesk db -Ne \"SELECT login, pname, email FROM clients WHERE status=16 AND type='client';\"`"
+  utter_faq/command_platform_compatibility:
+    - text: "Yes, the query is **identical for both platforms**."
+  utter_faq/unsuspend_customer_cli:
+    - text: "Use: `plesk bin customer --on login_name`"
+  utter_faq/resellers_in_suspended_list:
+    - text: "No, the command filters only **client-type accounts**."
+
+# --- Customer List & Information FAQs (Windows) ---
+  utter_faq/list_all_customer_accounts:
+    - text: "Run: `plesk bin customer --list`"
+  utter_faq/export_full_customer_details_csv:
+    - text: "This requires **PowerShell** scripting to export the database results to a CSV file."
+  utter_faq/check_customer_hosting_path:
+    - text: "Run: `plesk db -N -e \"SELECT cl.login, h.www_root FROM domains dom JOIN clients cl ON dom.cl_id = cl.id JOIN hosting h ON h.dom_id = dom.id;\"`"
+  utter_faq/admin_rights_customer_list:
+    - text: "Yes, **PowerShell must be opened as Administrator**."
+
+# --- Remote MySQL Connection FAQs (Linux/Windows) ---
+  utter_faq/create_remote_mysql_user:
+    - text: "Use these commands (replace placeholders):\n`CREATE USER 'pleskadmin'@'your-server-ip' IDENTIFIED BY 'password';`\n`GRANT ALL PRIVILEGES ON *.* TO 'pleskadmin'@'your-server-ip' WITH GRANT OPTION;`\n`FLUSH PRIVILEGES;`"
+  utter_faq/connect_remote_mysql_plesk:
+    - text: "Go to **Tools & Settings → Database Servers → Add Database Server**."
+  utter_faq/remote_db_connection_credentials:
+    - text: "Type: MySQL, Host: Remote IP, **Port: 3306**, Username/Password: Your created user credentials."
+  utter_faq/set_remote_db_as_default:
+    - text: "Yes, check **“Use this server as default for MySQL.”**"
+  utter_faq/remote_db_ssl_encryption:
+    - text: "Yes, Plesk supports **SSL for secure remote database connections**."
+
+# --- Disable Mail Service FAQs (Windows) ---
+  utter_faq/disable_mail_service_globally:
+    - text: "Go to **Tools & Settings → Server Components**."
+  utter_faq/mail_server_setting:
+    - text: "Select **None** for Mail Server."
+  utter_faq/disable_mail_service_restart:
+    - text: "No, it’s **applied instantly**."
+  utter_faq/confirm_mail_disabled:
+    - text: "The **Mail tab disappears** from domains and settings."
+  utter_faq/webmail_access_disabled:
+    - text: "Yes, webmail (Roundcube/Horde) **becomes unavailable**."
+  utter_faq/existing_mailbox_data:
+    - text: "No, it **remains on disk** until the service is re-enabled."
+  utter_faq/disable_mail_for_specific_domains:
+    - text: "Yes, go to **Domains → Mail Settings → Disable Mail Service**."
+
+# --- .NET Core Installation FAQs (Windows) ---
+  utter_faq/download_dotnet_core:
+    - text: "From **https://dotnet.microsoft.com/download/dotnet**. Choose the version your app requires, typically the latest LTS."
+  utter_faq/install_dotnet_core:
+    - text: "Run the **.exe installer** and complete the default setup."
+  utter_faq/verify_dotnet_core_installed:
+    - text: "Go to **Tools & Settings → Server Components → Refresh**."
+  utter_faq/check_dotnet_runtime_version:
+    - text: "Run: `dotnet --list-runtimes` in PowerShell."
+  utter_faq/multiple_dotnet_versions:
+    - text: "Yes, **multiple runtimes can coexist** without issues."
+
+# --- Disk Quota Management FAQs (Windows) ---
+  utter_faq/enable_disk_quota_management:
+    - text: "Right-click a drive → **Properties → Quota → Show Quota Settings**."
+  utter_faq/quota_management_options:
+    - text: "Enable: **✅ Enable quota management** and **✅ Deny disk space to users exceeding limit**."
+  utter_faq/set_global_quota_limit:
+    - text: "No, select **“Do not limit”** — Plesk applies quotas automatically."
+  utter_faq/see_per_user_quotas:
+    - text: "Click **Quota Entries…** in the Quota tab."
+  utter_faq/what_happens_quota_exceeded:
+    - text: "They **can’t save new data** until usage drops below quota."
+  utter_faq/view_quota_usage_powershell:
+    - text: "Run: `fsutil quota query D:`"
+  utter_faq/quotas_per_drive:
+    - text: "Yes, you must **enable them on each partition manually**."
+
+# --- PHP Version Management FAQs (Linux & Windows) ---
+  utter_faq/enable_additional_php_versions:
+    - text: "Go to **Tools & Settings → Plesk → Updates → Add/Remove Components**."
+  utter_faq/verify_php_versions_installed:
+    - text: "Run: `plesk bin php_handler --list`"
+  utter_faq/change_php_version_specific_site:
+    - text: "Go to **Websites & Domains → PHP Settings**."
+  utter_faq/extensions_installed_automatically:
+    - text: "Yes, common extensions like **mysqli, curl, and gd are included**."
+  utter_faq/php_isolation_per_domain:
+    - text: "Yes, Plesk **isolates PHP per domain or subscription**."
+
+# --- Git Installation & Version Control FAQs (Windows Plesk) ---
+  utter_faq/install_git_windows_plesk:
+    - text: "Go to **Extensions → Git → Install** to enable Git support in Plesk."
+  utter_faq/create_new_git_repository:
+    - text: "Go to **Domains → Git → Add Repository**, select Remote Repository, and enter your URL."
+  utter_faq/automatic_deployment:
+    - text: "Yes. Enable **Automatic Deployment** in repository settings to deploy whenever a push occurs."
+  utter_faq/deployment_files_location:
+    - text: "By default, deployed files are saved in the **`/httpdocs`** directory."
+  utter_faq/connect_private_repositories:
+    - text: "Yes, by configuring **SSH keys or deploy keys** in your Git service."
+  utter_faq/remove_git_repository:
+    - text: "Go to **Git → Repository Settings → Remove Repository** to delete it."
+
+# --- Plesk Installation FAQs (ETI Linux) ---
+  utter_faq/start_plesk_installer:
+    - text: "SSH to your server and run: `sh <(curl https://autoinstall.plesk.com/plesk-installer)`"
+  utter_faq/repositories_required_plesk:
+    - text: "Enable **EPEL and CodeReady Builder** repositories."
+  utter_faq/ports_for_plesk_access:
+    - text: "Ports **8443 (HTTPS)** and **8880 (HTTP)** must be allowed through the firewall."
+  utter_faq/access_plesk_after_installation:
+    - text: "Open a browser and go to **https://<server-ip>:8443**."
+  utter_faq/default_plesk_login_credentials:
+    - text: "Username: **admin**, Password: Defined during installation."
+  utter_faq/reset_plesk_admin_password:
+    - text: "Run: `plesk bin admin --show-password`"
+  utter_faq/repair_broken_installation:
+    - text: "Run: `plesk repair installation`"
+
+# --- LiteSpeed Installation FAQs (ETI Server) ---
+  utter_faq/install_litespeed:
+    - text: "Download and install the RPM: `rpm -ivh openlitespeed*.rpm --nodeps`"
+  utter_faq/verify_litespeed_installation:
+    - text: "Run: `/usr/local/lsws/bin/lswsctrl status`"
+  utter_faq/start_enable_litespeed:
+    - text: "Run: `systemctl enable --now lsws`"
+  utter_faq/access_litespeed_admin_panel:
+    - text: "Open `http://<server-ip>:**7080**` in a browser."
+  utter_faq/integrate_litespeed_plesk:
+    - text: "Install the **LiteSpeed Extension** and select `/usr/local/lsws` as the web server path."
+  utter_faq/apache_litespeed_coexistence:
+    - text: "No. **Only one web server can bind to port 80**."
+  utter_faq/confirm_litespeed_serving:
+    - text: "Run: `curl -I http://yourdomain.com` and check for **Server: LiteSpeed**."
+
+# --- MSSQL Installation FAQs (Windows Plesk) ---
+  utter_faq/best_sql_server_edition:
+    - text: "Use **Microsoft SQL Server 2022 Express (Advanced)**."
+  utter_faq/sql_server_authentication_mode:
+    - text: "Choose **Mixed Mode** (SQL + Windows Authentication)."
+  utter_faq/enable_tcpip_mssql:
+    - text: "Open **SQL Server Configuration Manager → Protocols for MSSQLSERVER → Enable TCP/IP**."
+  utter_faq/default_sql_server_port:
+    - text: "Port **1433**."
+  utter_faq/add_sql_server_to_plesk:
+    - text: "Go to **Tools & Settings → Database Servers → Add Database Server**."
+  utter_faq/confirm_mssql_connection_plesk:
+    - text: "Plesk will show a **“Connected” status** beside the database server."
+
+# --- MySQL Installation FAQs (ETI Linux) ---
+  utter_faq/install_mysql_locally:
+    - text: "Run: `sudo dnf localinstall *.rpm -y`"
+  utter_faq/start_enable_mysql:
+    - text: "Run: `sudo systemctl enable --now mysqld`"
+  utter_faq/find_temporary_root_password:
+    - text: "Run: `sudo grep 'temporary password' /var/log/mysqld.log`"
+  utter_faq/secure_mysql_installation:
+    - text: "Run: `sudo mysql_secure_installation`"
+  utter_faq/move_mysql_data_directory:
+    - text: "Use: `rsync -av /var/lib/mysql/ /app/mysql/`\nThen update `/etc/my.cnf` with the new path."
+  utter_faq/reload_system_services:
+    - text: "Run: `sudo systemctl daemon-reload`"
+  utter_faq/confirm_mysql_running:
+    - text: "Run: `mysql -u root -p`"
+
+# --- Plesk License Installation FAQs ---
+  utter_faq/install_update_plesk_license:
+    - text: "Go to **Tools & Settings → License Information → Install Key**."
+  utter_faq/activate_new_license_key:
+    - text: "Enter the activation code provided and click **Install Key**."
+  utter_faq/retrieve_new_key_automatically:
+    - text: "Yes, click **Retrieve Keys** to sync with the licensing server."
+  utter_faq/view_license_information_cli:
+    - text: "Run: `plesk bin license --show`"
+  utter_faq/what_happens_if_license_expires:
+    - text: "Plesk enters **read-only mode** until the license is renewed."
+  utter_faq/license_validation_frequency:
+    - text: "License verification occurs automatically **every 24 hours**."
+
+# --- Site.Pro Installation FAQs ---
+  utter_faq/install_sitepro_builder:
+    - text: "Run: `plesk bin extension --install /tmp/siteprobuilder.zip`"
+  utter_faq/check_sitepro_installed:
+    - text: "Go to **Extensions → Installed** and confirm Site.Pro Builder appears in the list."
+  utter_faq/access_sitepro_builder:
+    - text: "Navigate to **Domains → Website Builder → Site.Pro Builder**."
+  utter_faq/update_sitepro:
+    - text: "Download the latest zip from Site.Pro and **reinstall** using the install command."
+
+# --- Move Plesk Log Files FAQs (Linux) ---
+  utter_faq/why_move_plesk_logs_linux:
+    - text: "To **free up space** on the main partition and separate logs from system data."
+  utter_faq/stop_plesk_services_logs:
+    - text: "Run: `systemctl stop psa`"
+  utter_faq/copy_log_files_safely:
+    - text: "Run: `rsync -a /var/log/plesk/ /app/logs/plesk/`"
+  utter_faq/delete_old_log_directory:
+    - text: "Run: `rm -rf /var/log/plesk`"
+  utter_faq/link_new_log_directory:
+    - text: "Run: `ln -s /app/logs/plesk /var/log/plesk`"
+  utter_faq/verify_new_log_directory_linux:
+    - text: "Use: `tail -f /app/logs/plesk/panel.log`\nAnd: `ls -ld /var/log/plesk`"
+
+# --- Website Permission Repair FAQs ---
+  utter_faq/fix_file_folder_permissions:
+    - text: "Run the repair command: `plesk repair web example.com`"
+  utter_faq/repair_all_websites:
+    - text: "Yes, run: `plesk repair web -all`"
+  utter_faq/repair_downtime:
+    - text: "No major downtime — it only reloads Apache/Nginx configuration."
+  utter_faq/repair_via_gui:
+    - text: "Yes, go to **Tools & Settings → Repair Kit → Websites and Domains → Repair**."
+  utter_faq/check_repair_fails:
+    - text: "Check `/var/log/plesk/panel.log` for detailed error output."
+  utter_faq/safe_to_run_on_production:
+    - text: "Yes, it’s the **recommended Plesk repair method** for live sites."
+
+# --- Domain Forwarding Setup FAQs (Windows) ---
+  utter_faq/enable_domain_forwarding_permission:
+    - text: "Go to **Service Plans → Permissions → Show More**, then enable **Domain Management**."
+  utter_faq/set_up_domain_forwarding:
+    - text: "Go to **Hosting Settings → Hosting Type → Forwarding** and specify your target URL."
+  utter_faq/supported_redirection_types:
+    - text: "**Permanent (301)** and **Temporary (302)** redirects are supported."
+  utter_faq/forwarding_to_https:
+    - text: "Yes, secure destinations (`https://`) are fully supported."
+  utter_faq/disable_domain_forwarding:
+    - text: "Go to **Hosting Type → Change to Website Hosting** to revert."
+
+# --- Move Plesk Log Files (Windows) ---
+  utter_faq/move_plesk_logs_windows:
+    - text: "Create a new folder, e.g., `D:\\PleskLogs\\`."
+  utter_faq/log_directory_windows_permissions:
+    - text: "Grant **Full Control** to `psaadm`, `psacln`, `IIS_IUSRS`, and `Administrators`."
+  utter_faq/stop_services_moving_logs_windows:
+    - text: "Run: `net stop plesksrv`\n`net stop w3svc`"
+  utter_faq/move_logs_windows_command:
+    - text: "Run: `robocopy \"C:\\Program Files (x86)\\Plesk\\admin\\logs\" \"D:\\PleskLogs\\admin\" /E /MOVE`"
+  utter_faq/link_new_log_directory_windows:
+    - text: "Run: `mklink /D \"C:\\Program Files (x86)\\Plesk\\admin\\logs\" \"D:\\PleskLogs\\admin\"`"
+  utter_faq/why_use_symbolic_links_logs:
+    - text: "It ensures Plesk continues writing logs **without internal reconfiguration**."
+
+# --- Setup Local RPM Repository in Plesk Linux ---
+  utter_faq/why_use_local_rpm_repo:
+    - text: "To **speed up package installations** and ensure consistency across internal servers."
+  utter_faq/create_repo_directory:
+    - text: "Run: `mkdir -p /app/rpmrepo`"
+  utter_faq/create_repository_metadata:
+    - text: "Run: `createrepo /app/rpmrepo`"
+  utter_faq/make_repo_available:
+    - text: "Create `/etc/yum.repos.d/local.repo` with the `[localrepo]` configuration."
+  utter_faq/test_local_repo:
+    - text: "Run: `dnf repolist`"
+
+# --- Password Error While Renaming Domain (Linux) ---
+  utter_faq/password_error_domain_rename:
+    - text: "Due to **PAM password-history restrictions** blocking password reuse for the system user."
+  utter_faq/disable_pam_restriction:
+    - text: "Run `sed -ri 's/^( *password +requisite +pam_pwhistory\\.so.*)$/# \\1/' /etc/pam.d/system-auth /etc/pam.d/password-auth` to temporarily **comment out the restriction**."
+  utter_faq/set_remember_zero:
+    - text: "Run the `sed -ri 's/(pam_unix\\.so[^#]*)(remember=[0-9]+)/\\1remember=0/'` command to set **`remember=0`**."
+  utter_faq/reset_user_password:
+    - text: "Use `echo \"$USER:$NEWPASS\" | chpasswd` with a new, random password."
+  utter_faq/restore_pam_configuration:
+    - text: "Copy the backup file back: `cp -fp \"$(ls -1t /etc/pam.d/system-auth.bak-* | head -1)\" /etc/pam.d/system-auth`"
+  utter_faq/root_cause_password_issue:
+    - text: "The **password-history module prevents resetting existing users’ credentials** internally, which the domain rename process attempts."
+
+# --- Imunify360 Update FAQs ---
+  utter_faq/update_imunify360_manually:
+    - text: "Run: `imunify360-agent update`"
+  utter_faq/confirm_antivirus_definitions:
+    - text: "Review the cron job under `/etc/cron.d/imunify-antivirus`."
+  utter_faq/imunify360_update_frequency:
+    - text: "**Daily**, through the cron job configuration."
+  utter_faq/verify_imunify360_version:
+    - text: "Run: `imunify360-agent version`"
+
+# --- Resource Limit Reached Policy (Plesk) ---
+  utter_faq/resource_limit_reached_action:
+    - text: "Plesk enforces the selected **overuse policy** automatically when any defined limit (e.g., disk, bandwidth) is reached."
+  utter_faq/overuse_policy_options:
+    - text: "1. Overuse is not allowed\n2. Overuse of disk and traffic allowed\n3. Overuse allowed (all)"
+  utter_faq/overuse_not_allowed_meaning:
+    - text: "Customers cannot exceed assigned limits. Plesk **suspends the subscription** or blocks uploads/traffic."
+  utter_faq/overuse_disk_traffic_allowed:
+    - text: "It allows limited flexibility for users to exceed **disk/bandwidth temporarily** but not other resources."
+  utter_faq/best_practice_overuse_policy:
+    - text: "Set **“Overuse is not allowed”** to protect performance across the shared server."
+
+# --- LiteSpeed Bandwidth Configuration (Linux) ---
+  utter_faq/litespeed_bandwidth_throttling:
+    - text: "It prevents one domain or IP from consuming **excessive network or CPU bandwidth**."
+  utter_faq/ideal_bandwidth_all_limit:
+    - text: "2,000,000 bytes/s (~1.9 MB/s) — limits per client/IP."
+  utter_faq/minbandwidth_limit:
+    - text: "Set to **-1** to disable guaranteed bandwidth and maintain fairness."
+  utter_faq/large_file_limit:
+    - text: "Throttle files above **500 KB** to ~0.19 MB/s — balances I/O."
+  utter_faq/vhostbandwidthlimit:
+    - text: "8,000,000 bytes/s (~7.6 MB/s) to **cap per subscription usage**."
+  utter_faq/maxconnperclient:
+    - text: "**20** — limits concurrent connections per IP."
+
+# --- Optimum IIS Application Pool Settings ---
+  utter_faq/tuning_iis_pool_settings:
+    - text: "To **balance performance and memory use** across hosted sites."
+  utter_faq/iis_32bit_applications:
+    - text: "Yes. Enabling 32-bit **saves ~30–40 % RAM** for shared environments."
+  utter_faq/load_user_profile:
+    - text: "Disable — **saves ~1 GB** across 50 pools."
+  utter_faq/number_of_worker_processes:
+    - text: "Keep at **1 per pool** to avoid doubling memory consumption."
+  utter_faq/cpu_limit_per_pool:
+    - text: "**70 % per pool** — ensures fairness when one spikes."
+  utter_faq/recommended_recycle_interval:
+    - text: "**Idle Timeout:** 20 minutes. **Recycle Interval:** 1740 minutes (~29 hours)."
+
+# --- General Web Hosting (Batch 2) ---
+  utter_faq/fair_usage_policy_shared:
+    - text: "The **Fair Usage Policy** ensures optimal performance for all users by limiting excessive use of **CPU, memory, bandwidth, and storage** on shared servers."
+  utter_faq/files_not_allowed_unlimited:
+    - text: "**Unlimited plans** are for hosting website files only. **Bulk file storage, backups, or file-sharing services are not permitted**."
+  utter_faq/exceed_limits_action:
+    - text: "Your account may be **suspended**, or you may be asked to **upgrade your plan** or purchase additional resources."
+  utter_faq/etisalat_enforce_limits:
+    - text: "The system monitors **CPU, RAM, and connection limits**. Accounts using excessive resources may be restricted or suspended."
+
+# --- Plesk Control Panel (Batch 2) ---
+  utter_faq/plesk_login_url:
+    - text: "Visit **`https://yourdomain.com:8443`** and enter your username and password."
+  utter_faq/access_websites_domains:
+    - text: "Once logged in, it’s listed on the **left sidebar** of the Plesk dashboard."
+  utter_faq/change_php_version_dashboard:
+    - text: "Go to **Websites & Domains > Dashboard > PHP** and select the desired PHP version."
+  
+  utter_faq/change_aspnet_version:
+    - text: "Go to **Websites & Domains > Hosting Settings** and choose the required ASP.NET version."
+  utter_faq/access_file_manager:
+    - text: "Go to **Websites & Domains > Dashboard > Files** to open the file manager."
+  utter_faq/create_remove_subdomain:
+    - text: "Go to **Websites & Domains > Add Subdomain** and enter the name. To delete, select the subdomain and click **Remove**."
+  utter_faq/remove_domain:
+    - text: "Go to **Websites & Domains**, select the domain, and click **Remove Website**."
+  utter_faq/access_phpmyadmin:
+    - text: "Go to **Websites & Domains > Databases**, select your database, and click **phpMyAdmin**."
+  utter_faq/create_delete_user_account_batch2:
+    - text: "Go to **Users > Create User Account**. To delete, select the user and click **Remove**."
+  utter_faq/add_additional_admin_account:
+    - text: "Go to **Tools & Settings > Additional Administrator Accounts** and click **Add Administrator**."
+  utter_faq/add_domain_alias:
+    - text: "Go to **Websites & Domains > Add Domain Alias**, enter the alias, and select the main domain."
+  utter_faq/set_password_policies:
+    - text: "Go to **Tools & Settings > Security Policy** and select Strong or Very Strong password rules."
+
+# --- Database Management (Batch 2) ---
+  utter_faq/create_new_database_batch2:
+    - text: "Go to **Websites & Domains > Databases > Add Database**, enter details, and click OK."
+  utter_faq/export_import_database_batch2:
+    - text: "Use **Export Dump** to back up and **Import Dump** to restore your database."
+  utter_faq/create_import_mssql_database:
+    - text: "Go to **Customers > Databases > Add Database** or **Import Dump** for MSSQL."
+  utter_faq/connect_mssql_ssms:
+    - text: "Get the **Connection Info** from Plesk > Databases, then use it in SSMS."
+  utter_faq/get_database_connection_string:
+    - text: "Go to **Databases > Connection Info** to view host, username, and password details."
+  utter_faq/recommended_mysql_limits:
+    - text: "Default values include: **Max connections: 500**, Max user connections: 20, **Buffer pool: 8GB**, Timeout: 600s."
+
+# --- Security & Access (Batch 2) ---
+  utter_faq/enable_mfa_plesk:
+    - text: "Go to **Profile Settings > MFA Settings > Enable MFA** and scan the QR code using an authenticator app."
+  utter_faq/enable_prohibited_domain_names:
+    - text: "Go to **Tools & Settings > Security > Prohibited Domain Names** and click **Enable**."
+  utter_faq/protect_directories_passwords:
+    - text: "Go to **Websites & Domains > Password-Protected Directories**, add a directory, and assign users."
+  utter_faq/set_strong_passwords_users:
+    - text: "Go to **Edit Profile** and update the password to meet your policy settings."
+
+# --- Backup & Restore (Batch 2) ---
+  utter_faq/schedule_automatic_backups_batch2:
+    - text: "Go to **Websites & Domains > Backup & Restore > Schedule** and select the frequency and time."
+  utter_faq/perform_manual_backup:
+    - text: "Go to **Websites & Domains > Backup Manager > Back Up Now** and select what to include."
+  utter_faq/restore_website_database:
+    - text: "Go to **Backup & Restore**, choose the backup file, and click **Restore**."
+  utter_faq/disk_space_required_backups:
+    - text: "Approx. **4TB** for backup drives with 14 days of retention and ~102GB daily growth."
+  utter_faq/backup_exceeds_space:
+    - text: "**Older backups may be deleted**, or you may need to upgrade storage capacity."
+
+# --- Website Builder & CMS (Batch 2) ---
+  utter_faq/install_wordpress_batch2:
+    - text: "Go to **Applications > WordPress > Install** and follow the setup steps."
+  utter_faq/install_activate_wp_theme:
+    - text: "Go to **Websites & Domains > WordPress > Themes > Install and Activate**."
+  utter_faq/create_plugin_theme_sets:
+    - text: "Go to **WP Toolkit > Sets > Create Set**, then add your favorite plugins and themes."
+  utter_faq/install_joomla_drupal:
+    - text: "Go to **Applications > Joomla/Drupal > Install** and complete the setup wizard."
+  utter_faq/install_sitejet:
+    - text: "Go to **Extensions > Search Sitejet Builder > Install**, then configure with API keys."
+
+# --- SEO & Optimization FAQs (Batch 2) ---
+  utter_faq/what_is_seo_toolkit_batch2:
+    - text: "The **SEO Toolkit** is a Plesk extension that helps monitor and improve your website’s **SEO performance**."
+  utter_faq/install_seo_toolkit:
+    - text: "Go to **Extensions > Catalog > Search SEO Toolkit > Install**."
+  utter_faq/access_seo_toolkit:
+    - text: "Go to **Websites & Domains > SEO Toolkit** to open it."
+  utter_faq/scan_analyze_website_seo:
+    - text: "Click **Scan** in the SEO dashboard and view results under **Rank Tracking**."
+  utter_faq/seo_toolkit_features:
+    - text: "It provides **SEO analysis, keyword tracking, meta tag management**, and Google Search Console integration."
+
+# --- Development & Application FAQs (Batch 2) ---
+  utter_faq/install_nodejs_batch2:
+    - text: "Go to **Extensions > Search Node.js > Install**, then enable it for your domain."
+  utter_faq/deploy_aspnet_batch2:
+    - text: "Upload your files under **Websites & Domains > Files** and test via your domain URL."
+  utter_faq/install_older_php:
+    - text: "Go to **Tools & Settings > Updates > Add/Remove Components** and install the desired version (like PHP 7.4)."
+  utter_faq/create_custom_email_notifications:
+    - text: "Go to **Tools & Settings > Notifications > Edit Template** and customize the content."
+  utter_faq/enable_2fa_all_applications:
+    - text: "Enable **2FA in the Plesk admin panel** and use Google Authenticator to secure access."

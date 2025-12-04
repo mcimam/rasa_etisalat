@@ -1,80 +1,1742 @@
 version: "3.1"
 
 nlu:
-- intent: ask_question
-  examples: |
-    - I have a question
-    - Can you help me?
-    - I need assistance
-    - I have a problem
-    - I need support
-    - I have a query
-    - I want to ask something
-    - I need help with something
-    - I want to know something
-    - Can you answer a question for me?
+  - intent: faq/reset-password
+    examples: |
+      - I forgot my password
+      - Reset my password
+      - I can't remember my password
+      - Help me with my password
+      - What to do if I have forgotten my password or user ID?
+      - I am unable to access my account
 
-- intent: faq/reset-password
-  examples: |
-    - I forgot my password
-    - Reset my password
-    - I can't remember my password
-    - Help me with my password
-    - What to do if I have forgotten my password or user ID?
-    - I am unable to access my account
+  - intent: faq/trouble-login
+    examples: |
+      - I can't log in
+      - I'm unable to log in
+      - Login issues
+      - I am having trouble logging in
+      - Why have I been blocked when attempting to login?
 
-- intent: faq/trouble-login
-  examples: |
-    - I can't log in
-    - I'm unable to log in
-    - Login issues
-    - I am having trouble logging in
-    - Why have I been blocked when attempting to login?
+  - intent: faq/dns_a_record
+    examples: |
+      - What is a DNS A record?
+      - Can you explain DNS A records?
+      - I need information about A records in DNS.
+      - How do I set up a DNS A record?
+      - What is the purpose of a DNS A record?
 
-- intent: faq/dns_a_record
-  examples: |
-    - What is a DNS A record?
-    - Can you explain DNS A records?
-    - I need information about A records in DNS.
-    - How do I set up a DNS A record?
-    - What is the purpose of a DNS A record?
+  - intent: faq/dns_txt_record
+    examples: |
+      - What is a DNS TXT record?
+      - Can you explain DNS TXT records?
+      - I need information about TXT records in DNS.
+      - How do I set up a DNS TXT record?
+      - What is the purpose of a DNS TXT record?
 
-- intent: faq/dns_txt_record
-  examples: |
-    - What is a DNS TXT record?
-    - Can you explain DNS TXT records?
-    - I need information about TXT records in DNS.
-    - How do I set up a DNS TXT record?
-    - What is the purpose of a DNS TXT record?
+  - intent: faq/dns_mx_record
+    examples: |
+      - What is a DNS MX record?
+      - Can you explain DNS MX records?
+      - I need information about MX records in DNS.
+      - How do I set up a DNS MX record?
+      - What is the purpose of a DNS MX record?
 
-- intent: faq/dns_mx_record
-  examples: |
-    - What is a DNS MX record?
-    - Can you explain DNS MX records?
-    - I need information about MX records in DNS.
-    - How do I set up a DNS MX record?
-    - What is the purpose of a DNS MX record?
+  - intent: faq/dns_cname_record
+    examples: |
+      - What is a DNS CNAME record?
+      - Can you explain DNS CNAME records?
+      - I need information about CNAME records in DNS.
+      - How do I set up a DNS CNAME record?
+      - What is the purpose of a DNS CNAME record?
 
-- intent: faq/dns_cname_record
-  examples: |
-    - What is a DNS CNAME record?
-    - Can you explain DNS CNAME records?
-    - I need information about CNAME records in DNS.
-    - How do I set up a DNS CNAME record?
-    - What is the purpose of a DNS CNAME record?
+  - intent: faq/dns_srv_record
+    examples: |
+      - What is a DNS SRV record?
+      - Can you explain DNS SRV records?
+      - I need information about SRV records in DNS.
+      - How do I set up a DNS SRV record?
+      - What is the purpose of a DNS SRV record?
 
-- intent: faq/dns_srv_record
-  examples: |
-    - What is a DNS SRV record?
-    - Can you explain DNS SRV records?
-    - I need information about SRV records in DNS.
-    - How do I set up a DNS SRV record?
-    - What is the purpose of a DNS SRV record?
+  - intent: faq/dns_name_server
+    examples: |
+      - What is a DNS name server?
+      - Can you explain DNS name servers?
+      - I need information about name servers in DNS.
+      - How do I set up a DNS name server?
+      - What is the purpose of a DNS name server?
 
-- intent: faq/dns_name_server
-  examples: |
-    - What is a DNS name server?
-    - Can you explain DNS name servers?
-    - I need information about name servers in DNS.
-    - How do I set up a DNS name server?
-    - What is the purpose of a DNS name server?
+  # --- General Web Hosting ---
+  - intent: faq/file_restrictions
+    examples: |
+      - Are there any **restrictions** on the types of **files** I can host?
+      - Can I store non-website files?
+      - Is using my hosting space for **bulk file storage** allowed?
+      - What kind of **files** should I avoid hosting?
+
+  - intent: faq/exceed_limits
+    examples: |
+      - What happens if my website **exceeds its disk space or bandwidth limits**?
+      - My site is using too much **resource**. What happens now?
+      - Will my account be suspended if I go over the **limit**?
+      - What is the action if my **bandwidth** usage is too high?
+
+  - intent: faq/cloud_storage_backup
+    examples: |
+      - Can I use my hosting space for **cloud storage**?
+      - Can I **back up my personal computer** on my shared hosting?
+      - Is **personal file storage** allowed on shared hosting?
+
+  # --- Plesk Control Panel ---
+  - intent: faq/plesk_login
+    examples: |
+      - How do I **log in** to my **Plesk Control Panel**?
+      - Where is the **Plesk login** page?
+      - What's the **URL** for the Plesk login?
+
+  - intent: faq/change_php_version
+    examples: |
+      - How do I **change the PHP version** for my website?
+      - Where are the **PHP Settings** in Plesk?
+      - Can I select a **different PHP version**?
+
+  - intent: faq/upload_files
+    examples: |
+      - How do I **upload files** to my website?
+      - Wutter_ask_rephrasehere is the **File Manager**?
+      - Which directory should I upload my website content to?
+
+  # --- Database Management ---
+  - intent: faq/manage_database_web_interface
+    examples: |
+      - How can I **manage my database** using a web interface?
+      - Where do I find **phpMyAdmin**?
+      - What is the **management tool** for MySQL/MariaDB on Linux?
+
+  - intent: faq/export_import_database
+    examples: |
+      - How do I **export** (back up) a database?
+      - How do I **import** a database?
+      - Where is the **Export function** in the database tool?
+      - How can I **restore** a database using a **.sql** file?
+
+  - intent: faq/database_connection_details
+    examples: |
+      - How do I find my **database connection details**?
+      - Where can I see the **hostname, database name, and username**?
+      - What information do I need for my website's **configuration file**?
+
+  # --- Security & Access ---
+  - intent: faq/install_lets_encrypt_ssl
+    examples: |
+      - How do I **install a free Let's Encrypt SSL certificate**?
+      - Where is the **SSL/TLS Certificates** section?
+      - How do I set the **301 redirect from HTTP to HTTPS**?
+
+  # --- Backup & Restore ---
+  - intent: faq/schedule_automatic_backups
+    examples: |
+      - Can I **schedule automatic backups**?
+      - Where is the **Schedule tab** for backups?
+      - How do I configure the **frequency** of backups?
+
+  - intent: faq/restore_from_backup
+    examples: |
+      - How do I **restore my website from a backup**?
+      - Where is the list of **available backup files**?
+      - How do I select which **components** to recover?
+
+  # --- Website Builder & CMS ---
+  - intent: faq/manage_wordpress_themes_plugins
+    examples: |
+      - How do I manage my **WordPress themes and plugins** from Plesk?
+      - Is there a central dashboard for **updating themes and plugins**?
+
+  # --- Account & Billing ---
+  - intent: faq/change_plesk_password
+    examples: |
+      - How can I **change my Plesk password**?
+      - Where is **My Profile**?
+
+  - intent: faq/create_delete_user_account
+    examples: |
+      - How do I **create or delete a user account** for a developer?
+      - Where is the **Users tab**?
+      - How do I **remove** a user?
+
+  - intent: faq/account_suspended
+    examples: |
+      - Why is my **account suspended**?
+      - What causes account **suspension**?
+      - Why is my site not accessible?
+
+  - intent: faq/unsuspend_account
+    examples: |
+      - How can I get my **account unsuspended**?
+      - What should I do after resolving a **suspension** issue?
+
+  - intent: faq/find_document_root
+    examples: |
+      - How do I find my **hosting path or document root**?
+      - Where can I see my **primary document root**?
+
+  # --- Resource Usage & Policies ---
+  - intent: faq/fair_usage_policy
+    examples: |
+      - What is a "**Fair Usage Policy**"?
+      - What is the purpose of the **Fair Usage Policy**?
+
+  - intent: faq/overuse_policy
+    examples: |
+      - What is the "**overuse policy**" in Plesk?
+      - What happens if **overuse is not allowed**?
+
+  - intent: faq/check_current_resource_usage
+    examples: |
+      - How can I **check my current resource usage** in the Plesk panel?
+      - Where is the **Resource Usage** section?
+      - Where can I find the **Statistics tab**?
+
+  - intent: faq/resource_limits_soon
+    examples: |
+      - What does it mean if my site "**might hit resource limits soon**"?
+      - What is the **warning** from Plesk about resource usage?
+
+  - intent: faq/check_disk_bandwidth_limits
+    examples: |
+      - How can I check my **disk space and bandwidth allocation limits**?
+      - Where are my **limits** displayed?
+
+  - intent: faq/what_is_traffic
+    examples: |
+      - What does "**Traffic**" refer to in my plan?
+      - What is the **monthly bandwidth limit**?
+
+  # --- File Management ---
+  - intent: faq/httpdocs_directory
+    examples: |
+      - What is the **httpdocs directory**?
+      - What is the main folder for my **public files**?
+
+  - intent: faq/password_protect_directory
+    examples: |
+      - How can I **password-protect a directory** on my website?
+      - Where are the **Password-Protected Directories** settings?
+
+  - intent: faq/fix_file_permissions
+    examples: |
+      - How do I fix **file permission issues** on my website?
+      - Where is the **Plesk repair utility**?
+
+  - intent: faq/correct_permissions_linux
+    examples: |
+      - What are the **correct permissions** for files and folders on Linux?
+      - Should folders be **755** and files be **644**?
+
+  - intent: faq/edit_files_in_plesk
+    examples: |
+      - Can I **edit files directly in Plesk**?
+      - Does the **File Manager** include a built-in text editor?
+
+  - intent: faq/upload_extract_zip
+    examples: |
+      - How do I **upload and extract a ZIP file**?
+      - Where is the **Extract Files** button in File Manager?
+
+  # --- Database Management (Cont.) ---
+  - intent: faq/create_new_database
+    examples: |
+      - How do I **create a new database**?
+      - Where is the **Add Database** option?
+
+  - intent: faq/remote_database_access
+    examples: |
+      - Can I **connect to my database from a remote computer**?
+      - How do I add my computer's **IP address** to the access list?
+
+  - intent: faq/change_database_user_password
+    examples: |
+      - How do I **change the password** for a database user?
+      - Where is the **Users tab** for databases?
+
+  # --- Security (Cont.) ---
+  - intent: faq/force_https
+    examples: |
+      - How do I **force my website to use HTTPS** after installing an SSL certificate?
+      - How do I enable the **Permanent SEO-safe 301 redirect**?
+
+  - intent: faq/lets_encrypt_renewal
+    examples: |
+      - How often do I need to **renew my Let's Encrypt certificate**?
+      - Does Plesk **automatically renew** the certificate?
+
+  - intent: faq/enable_mfa
+    examples: |
+      - How do I enable **Multi-Factor Authentication (MFA)** for my Plesk account?
+      - Where are the **MFA Settings** in My Profile?
+
+  - intent: faq/what_is_imunify360
+    examples: |
+      - What is **Imunify360**?
+      - Does Imunify360 include an **antivirus** and **firewall**?
+
+  - intent: faq/imunify360_scan_frequency
+    examples: |
+      - How often does **Imunify360 scan** my files?
+      - Are the scans **automatic** and **daily**?
+
+  # --- Backups & Restoration (Cont.) ---
+  - intent: faq/create_manual_backup
+    examples: |
+      - How do I **create a manual backup** of my website?
+      - Where is the **Backup & Restore** section?
+      - What components can I include in a backup?
+
+  - intent: faq/where_are_backups_stored
+    examples: |
+      - Where are my **backups stored**?
+      - Are backups stored on the **server** or in a **remote location**?
+
+  - intent: faq/full_vs_incremental_backup
+    examples: |
+      - What's the difference between a **Full and an Incremental backup**?
+      - Which type of backup saves **space and time**?
+
+  - intent: faq/download_backup
+    examples: |
+      - Can I **download a backup** to my local computer?
+
+  - intent: faq/password_protect_backups
+    examples: |
+      - Can I **protect my backups with a password**?
+
+  # --- Applications & Development ---
+  - intent: faq/install_other_applications
+    examples: |
+      - How do I install other applications like **Joomla or Drupal**?
+      - Where is the **Applications tab** for one-click installs?
+
+  - intent: faq/install_nodejs
+    examples: |
+      - How do I install **Node.js** for my website?
+      - Where can I enable the **Node.js extension**?
+
+  - intent: faq/deploy_aspnet
+    examples: |
+      - How do I deploy an **ASP.NET application**? (Windows)
+      - Where do I upload my **ASP.NET** files?
+
+  - intent: faq/change_aspnet_version
+    examples: |
+      - How do I **change the ASP.NET version** for my site? (Windows)
+      - Where is the setting for the **ASP.NET version**?
+
+  - intent: faq/use_git_to_deploy
+    examples: |
+      - How do I use **Git to deploy my website**?
+      - Where is the **Git extension** in Plesk?
+
+  # --- Performance & Troubleshooting ---
+  - intent: faq/503_service_unavailable
+    examples: |
+      - My website is showing a "**503 Service Unavailable**" error. What does that mean?
+      - What causes a **503 error**?
+
+  - intent: faq/fix_503_windows
+    examples: |
+      - How can I fix a **503 error on Windows hosting**?
+      - How do I **Recycle** or **Start** the Dedicated IIS Application Pool?
+
+  - intent: faq/customize_error_pages
+    examples: |
+      - How can I **customize my website's error pages** (like 404 Not Found)?
+      - Where is the **Custom error documents** checkbox?
+
+  - intent: faq/find_website_error_logs
+    examples: |
+      - Where can I find my website's **error logs**?
+      - Where is the **Logs** section for web server logs?
+
+  - intent: faq/seo_toolkit
+    examples: |
+      - What is the **SEO Toolkit** in Plesk?
+      - How does the **SEO Toolkit** help me?
+
+  - intent: faq/check_website_traffic_statistics
+    examples: |
+      - How can I check my website's **traffic statistics**?
+      - Where can I find **AWStats or Webalizer**?
+
+  # --- Scheduled Tasks (Cron Jobs) ---
+  - intent: faq/what_are_scheduled_tasks
+    examples: |
+      - What are **Scheduled Tasks** in Plesk?
+      - What is a "**cron job**" on Linux?
+
+  - intent: faq/create_scheduled_task
+    examples: |
+      - How do I **create a scheduled task** in Plesk?
+      - Where is the **Add Task** button?
+
+  - intent: faq/task_types
+    examples: |
+      - What are the different **types of tasks** I can schedule?
+      - What is "**Fetch a URL**" used for?
+
+  - intent: faq/set_task_schedule
+    examples: |
+      - How do I **set the schedule for a task**?
+      - Can I use "**Cron style**" syntax?
+
+  - intent: faq/task_success_status
+    examples: |
+      - How can I see if my **scheduled task ran successfully** or if there were errors?
+      - Can Plesk send **email notifications** for task failures?
+
+  - intent: faq/task_run_user
+    examples: |
+      - Under which **user account** do scheduled tasks run?
+
+  - intent: faq/disable_scheduled_task
+    examples: |
+      - Can I **disable a scheduled task without deleting it**?
+
+  # --- Advanced Security Features ---
+  - intent: faq/what_is_hotlinking
+    examples: |
+      - What is **hotlinking**?
+      - What is **bandwidth theft**?
+
+  - intent: faq/enable_hotlink_protection
+    examples: |
+      - How do I **enable hotlink protection** for my website?
+      - Where is the **Hotlink Protection** setting on Windows?
+      - How do I enable it for **WordPress**?
+
+  - intent: faq/hotlink_protection_files
+    examples: |
+      - What **file extensions** should I protect from hotlinking?
+      - Should I protect **jpg, png, and pdf**?
+
+  - intent: faq/hotlink_protection_broken_images
+    examples: |
+      - I enabled **hotlink protection**, and now images on my own site are **broken**. What's wrong?
+      - What did I forget to add to the **friendly websites** list?
+
+  # --- More Troubleshooting ---
+  - intent: faq/403_forbidden_causes
+    examples: |
+      - My site is showing a "**403 Forbidden**" error. What are the common causes?
+      - Could **incorrect file permissions** cause a 403 error?
+
+  - intent: faq/404_not_found_causes
+    examples: |
+      - My site is showing a "**404 Not Found**" error, but I can see the file is there. What's wrong?
+      - Could a **case-sensitivity issue** cause a 404 error on Linux?
+
+  - intent: faq/500_internal_server_error
+    examples: |
+      - I see a "**500 Internal Server Error**." What are the first steps to troubleshoot this?
+      - What are the common causes of a **500 error**?
+
+  - intent: faq/increase_php_timeout
+    examples: |
+      - My **PHP script is timing out**. How can I **increase the execution time**?
+      - Where can I modify `max_execution_time` and `memory_limit`?
+
+  - intent: faq/plesk_login_error
+    examples: |
+      - My **Plesk login page is not working** or shows an error. What could be the problem?
+      - Is it possible my **IP address has been blocked** by Fail2Ban?
+
+  - intent: faq/website_suddenly_slow
+    examples: |
+      - My website is suddenly **very slow**. What can I check?
+      - How can I identify a spike in **CPU or RAM** usage?
+
+  - intent: faq/htaccess_down
+    examples: |
+      - I uploaded a new **.htaccess file and now my site is down**. How do I fix it?
+      - How do I temporarily **disable the .htaccess file**?
+
+  - intent: faq/website_hacked
+    examples: |
+      - My website was **hacked**. What should I do?
+      - What are the first steps after a **security breach**?
+
+  # --- Plesk Interface & Customization ---
+  - intent: faq/change_plesk_view
+    examples: |
+      - What is the difference between "**Power User**" view and "**Service Provider**" view?
+      - How can I **switch views** in Plesk?
+
+  - intent: faq/change_plesk_language
+    examples: |
+      - Can I change the **default language** of the Plesk interface?
+      - Where do I select my **preferred interface language**?
+
+  - intent: faq/what_is_advisor
+    examples: |
+      - What is the "**Advisor**" in Plesk?
+      - What kind of **recommendations** does the Advisor provide?
+
+  - intent: faq/manage_multiple_domains
+    examples: |
+      - Can I **manage multiple domains** from a single Plesk login?
+      - Do I need a "**multi-domain**" or "**reseller**" plan?
+
+  - intent: faq/domain_lock_icon
+    examples: |
+      - What does the **lock icon** next to my domain mean?
+      - What does a **closed green lock** indicate?
+
+  # --- Platform-Specific Features & Information ---
+  - intent: faq/edit_php_ini
+    examples: |
+      - Can I edit my **php.ini** file directly?
+      - Where are the **Additional directives** for custom PHP settings?
+
+  - intent: faq/enable_php_extension
+    examples: |
+      - My website needs a specific **PHP extension** that isn't enabled. How can I enable it?
+      - How do I request my hosting provider to **install a PHP extension**?
+
+  - intent: faq/error_docs_directory
+    examples: |
+      - What is the **error_docs directory**?
+      - Can I edit files in the **error_docs** directory?
+
+  - intent: faq/ssh_access
+    examples: |
+      - Can I use **SSH to access my hosting account**?
+      - Where are the **connection details** for SSH?
+
+  - intent: faq/composer
+    examples: |
+      - What is **Composer**, and can I use it in Plesk?
+      - Is there a **Composer extension**?
+
+  # --- Miscellaneous ---
+  - intent: faq/server_ip_address
+    examples: |
+      - How do I find out my **server's IP address**?
+      - Where is the **IP address** listed on the Websites & Domains page?
+
+  - intent: faq/grace_suspension_period
+    examples: |
+      - What is a "**grace period**" and "**suspension period**" for subscriptions?
+      - What happens during a **suspension period**?
+
+  - intent: faq/domain_vs_subscription
+    examples: |
+      - What is the difference between a **domain and a subscription**?
+      - Does a **subscription** contain one or more domains?
+
+  - intent: faq/plesk_support
+    examples: |
+      - How do I get **support for Plesk**?
+      - Who should be my **first point of contact** for issues?
+
+  ##################################################################
+  #
+  ##################################################################
+# --- IIS Application Pool FAQs ---
+
+  - intent: faq/integrated_pipeline_mode
+    examples: |
+      - What is the **Integrated Pipeline Mode** in IIS?
+      - Can you explain **Integrated Pipeline Mode**?
+
+  - intent: faq/integrated_mode_benefits
+    examples: |
+      - What are the **benefits of using Integrated Mode**?
+      - Does **Integrated Mode** improve performance?
+
+  - intent: faq/when_to_choose_integrated_mode
+    examples: |
+      - When should I **choose Integrated Mode**?
+      - Is Integrated Mode recommended for **modern ASP.NET**?
+
+  - intent: faq/classic_pipeline_mode
+    examples: |
+      - What is **Classic Pipeline Mode**?
+      - How does **Classic Mode** handle requests?
+
+  - intent: faq/why_use_classic_mode
+    examples: |
+      - Why **use Classic Mode**?
+      - Should I choose Classic Mode for **older ASP.NET** apps?
+
+  - intent: faq/incompatible_app_integrated_mode
+    examples: |
+      - What happens if I run an **incompatible app in Integrated Mode**?
+      - My **legacy app** is showing errors in Integrated Mode.
+
+  - intent: faq/switch_pipeline_modes
+    examples: |
+      - How can I **switch between pipeline modes** in Plesk?
+      - Where is **Managed Pipeline Mode** located?
+
+  - intent: faq/default_pipeline_mode
+    examples: |
+      - Which mode does **Plesk recommend by default**?
+      - Is **Integrated Mode** the default choice?
+
+  # --- 503 Error Page Customization FAQs ---
+  - intent: faq/503_page_linux_path
+    examples: |
+      - Where is the **default 503 error page stored in Linux Plesk** servers?
+      - What is the path to the **503 template** on Linux?
+
+  - intent: faq/change_503_page_linux
+    examples: |
+      - How can I **change the default 503 error page in Linux**?
+      - How do I **customize the 503 page**?
+
+  - intent: faq/503_page_windows_path
+    examples: |
+      - Where is the **503 template stored in Windows Plesk** servers?
+      - What is the path to the **503 template** on Windows?
+
+  - intent: faq/apply_new_503_template
+    examples: |
+      - Will **existing domains reflect the new 503 template**?
+      - Does the new 503 page apply automatically to **newly created domains**?
+
+  - intent: faq/unique_503_page_per_domain
+    examples: |
+      - Can I assign a **unique 503 page per domain**?
+      - How do I manually set a 503 page for a **single domain**?
+
+  - intent: faq/revert_original_503_page
+    examples: |
+      - Can I **revert to the original 503 page**?
+      - How do I restore the **default 503 template**?
+
+  - intent: faq/what_is_skel_directory
+    examples: |
+      - Why use **.skel templates** in Plesk?
+      - What is the purpose of the **.skel directory**?
+
+  - intent: faq/method_for_other_error_pages
+    examples: |
+      - Can the same method be used for **other error pages (404, 500, etc.)**?
+      - How do I customize the **404.html** page?
+
+  # --- Document Root Management FAQs ---
+  - intent: faq/default_document_root_path
+    examples: |
+      - What is the **default document root path** in Plesk?
+      - Where are all **websites stored by default**?
+
+  - intent: faq/change_document_root_directory
+    examples: |
+      - How can I **change the document root to another directory**?
+      - Which file controls the **HTTPD_VHOSTS_D** setting?
+
+  - intent: faq/restart_services_document_root_change
+    examples: |
+      - After changing the path, what **services must be restarted**?
+      - Which command restarts **Plesk and Apache**?
+
+  - intent: faq/move_existing_website_data
+    examples: |
+      - How do I **move existing website data to the new path**?
+      - What command copies the current **vhosts folder**?
+
+  - intent: faq/create_new_symlink
+    examples: |
+      - How do I **create the new symlink for Plesk**?
+      - What is the command to create a **symbolic link** for vhosts?
+
+  # --- Remote Database Hostname Configuration (Windows) ---
+  - intent: faq/edit_windows_hosts_file
+    examples: |
+      - How can I edit the **Windows hosts file** to map remote servers?
+      - What is the path to the **hosts file** on Windows?
+
+  - intent: faq/hosts_entries_example
+    examples: |
+      - What **host entries should I add**?
+      - Provide an example of a **hostname mapping** in the hosts file.
+
+  - intent: faq/why_use_hostnames_db
+    examples: |
+      - Why use **hostnames instead of IP addresses** for databases?
+      - What are the benefits of using **hostnames** for **SSL/TLS validation**?
+
+  - intent: faq/configure_hostnames_in_plesk
+    examples: |
+      - How can I **configure these hostnames inside Plesk**?
+      - Where do I update the **hostname field** under Database Servers?
+
+  - intent: faq/verify_hostname_resolution
+    examples: |
+      - How do I **verify if hostname resolution is working**?
+      - What command can I run to **ping the remote database** hostname?
+
+  - intent: faq/admin_rights_hosts_file
+    examples: |
+      - Do I need **admin rights to edit the hosts file**?
+      - Must Notepad be run as **Administrator**?
+
+  # --- Remote Database Hostname Configuration (Linux) ---
+  - intent: faq/define_remote_mysql_hostname_linux
+    examples: |
+      - Where do I **define the remote MySQL hostname on Linux**?
+      - Which file should I edit to add a **hostname mapping**?
+
+  - intent: faq/configure_hostname_in_plesk_linux
+    examples: |
+      - After editing the hostname, how do I **configure it in Plesk**?
+      - How do I update the **MySQL Hostname** in Plesk?
+
+  - intent: faq/restart_required_hostname_change
+    examples: |
+      - Is a **service restart required** after editing the hostname file?
+      - Should I **restart Plesk** after changing the remote database hostname?
+
+  - intent: faq/privileges_edit_hostname_file
+    examples: |
+      - What **privileges** do I need to edit the hostname file?
+      - Is **Root or sudo privileges** required for `/etc/vhosts/`?
+
+  # --- Database Log Path Configuration (Linux) ---
+  - intent: faq/create_db_log_directory
+    examples: |
+      - How do I **create a new directory for database logs**?
+      - What command creates the **`/app/logs/mysql`** directory?
+
+  - intent: faq/set_db_log_permissions
+    examples: |
+      - What **permissions should be applied** to the new log directory?
+      - How do I set **ownership** and **permissions (chown/chmod)** for the MySQL log directory?
+
+  - intent: faq/config_file_db_log_path
+    examples: |
+      - Which **configuration file controls the log path**?
+      - Where do I modify the **log and PID file paths** for MySQL?
+
+  - intent: faq/set_new_log_directory_config
+    examples: |
+      - How do I **set the new log directory in the config file**?
+      - What lines should I add for **`log-error`** and **`pid-file`**?
+
+  - intent: faq/restart_db_service
+    examples: |
+      - What command **restarts the database service**?
+      - How do I apply changes by restarting **MariaDB**?
+
+  - intent: faq/verify_new_log_location
+    examples: |
+      - How can I **verify that logs are now being written to the new location**?
+      - What is the **`tail -f`** command to check the log file?
+
+  - intent: faq/incorrect_log_permissions
+    examples: |
+      - What happens if **permissions are incorrect** for the log directory?
+      - Why would MySQL show a **“permission denied”** error?
+
+  - intent: faq/mariadb_compatibility
+    examples: |
+      - Does this method work with **MariaDB as well**?
+      - Do MariaDB and MySQL share the same **logging mechanism**?
+
+  # --- MSSQL Log File Directory (Windows) ---
+  - intent: faq/view_mssql_log_path
+    examples: |
+      - How can I **view the current MSSQL log file path**?
+      - Where is the **`-e` parameter** in SQL Server Configuration Manager?
+
+  - intent: faq/create_mssql_log_directory
+    examples: |
+      - How do I **create a new directory for logs on the D drive**?
+      - Where should I create the **SQLLogs** folder?
+
+  - intent: faq/mssql_log_folder_permissions
+    examples: |
+      - What **permissions are required** for the new MSSQL log folder?
+      - How do I grant permissions to **`NT Service\MSSQLSERVER`**?
+
+  - intent: faq/update_mssql_startup_parameter
+    examples: |
+      - What should the **updated startup parameter** look like for the new log path?
+      - How do I change the `-e` parameter to point to **`D:\SQLLogs\ERRORLOG`**?
+
+  - intent: faq/verify_new_mssql_log_path
+    examples: |
+      - How do I **verify the new log path after restart**?
+      - Where can I check the logs in **SQL Server Management Studio**?
+
+  # --- Disk Space & Bandwidth Allocation FAQs (Plesk Linux) ---
+  - intent: faq/view_all_hosting_plans
+    examples: |
+      - How can I **view all hosting plans** configured on my Plesk server?
+      - What is the **`plesk db`** query to see all plan IDs and names?
+
+  - intent: faq/check_plan_limits
+    examples: |
+      - How can I **check the disk space and bandwidth limit for a specific plan**?
+      - What command uses **`plesk bin service_plan --info`**?
+
+  - intent: faq/check_multiple_plans
+    examples: |
+      - Can I **check multiple plans at once**?
+      - How do I **loop through plans** to check their limits?
+
+  - intent: faq/disk_space_meaning
+    examples: |
+      - What does "**Disk space**" represent in this output?
+      - What does **allocated storage limit** include?
+
+  - intent: faq/traffic_meaning
+    examples: |
+      - What does "**Traffic**" indicate?
+      - What is the **monthly bandwidth limit**?
+
+  - intent: faq/identify_unlimited_plans
+    examples: |
+      - How do I **identify unlimited hosting plans**?
+      - What keyword should I look for?
+
+  - intent: faq/root_access_cli_commands
+    examples: |
+      - Do I need **root access to run these commands**?
+      - Is **SSH access with root privileges** required?
+
+  # --- Suspended Accounts FAQs (Plesk Windows & Linux) ---
+  - intent: faq/plesk_customer_status_codes
+    examples: |
+      - How can I check the **status codes** used by Plesk for customers?
+      - What do the **customer status codes mean** (0, 16, 64)?
+
+  - intent: faq/view_only_suspended_accounts
+    examples: |
+      - How can I view **only suspended accounts**?
+      - What is the SQL query to filter for **status=16**?
+
+  - intent: faq/command_platform_compatibility
+    examples: |
+      - Does the same **command work in Windows and Linux**?
+      - Is the query identical for both **platforms**?
+
+  - intent: faq/unsuspend_customer_cli
+    examples: |
+      - How can I **unsuspend a customer**?
+      - What is the **`plesk bin customer --on`** command?
+
+  - intent: faq/resellers_in_suspended_list
+    examples: |
+      - Are **resellers included in this list** of suspended accounts?
+      - Does the command filter only **client-type accounts**?
+
+  # --- Customer List & Information FAQs (Windows) ---
+  - intent: faq/list_all_customer_accounts
+    examples: |
+      - How can I **list all customer accounts** in Windows Plesk?
+      - What is the **`plesk bin customer --list`** command?
+
+  - intent: faq/export_full_customer_details_csv
+    examples: |
+      - How can I **export full customer details to CSV**?
+      - How do I use **PowerShell to export** customer details?
+
+  - intent: faq/check_customer_hosting_path
+    examples: |
+      - How can I check each **customer’s hosting path**?
+      - What SQL query links domains, clients, and **`www_root`**?
+
+  - intent: faq/admin_rights_customer_list
+    examples: |
+      - Do I need **admin rights to run this** customer list export?
+      - Must **PowerShell** be opened as **Administrator**?
+
+  # --- Remote MySQL Connection FAQs (Linux/Windows) ---
+  - intent: faq/create_remote_mysql_user
+    examples: |
+      - How can I **create a MySQL user for Plesk to connect remotely**?
+      - What are the **`CREATE USER`** and **`GRANT ALL PRIVILEGES`** commands?
+
+  - intent: faq/connect_remote_mysql_plesk
+    examples: |
+      - How can I **connect this remote MySQL in Plesk**?
+      - Where do I find the **Add Database Server** option?
+
+  - intent: faq/remote_db_connection_credentials
+    examples: |
+      - What **credentials** do I use for the remote database?
+      - What is the default MySQL **Port**?
+
+  - intent: faq/set_remote_db_as_default
+    examples: |
+      - Can I set the remote server as the **default database server**?
+      - What option checks **“Use this server as default for MySQL”**?
+
+  - intent: faq/remote_db_ssl_encryption
+    examples: |
+      - Can this **connection be SSL-encrypted**?
+      - Does Plesk support **SSL** for secure remote database connections?
+
+  # --- Disable Mail Service FAQs (Windows) ---
+  - intent: faq/disable_mail_service_globally
+    examples: |
+      - How do I **disable the mail service in Plesk**?
+      - Where are **Server Components** settings located?
+
+  - intent: faq/mail_server_setting
+    examples: |
+      - What should I set the **Mail Server option to**?
+      - Should I select **None** for Mail Server?
+
+  - intent: faq/disable_mail_service_restart
+    examples: |
+      - Do I need to **restart services** after disabling mail?
+      - Is the change applied **instantly**?
+
+  - intent: faq/confirm_mail_disabled
+    examples: |
+      - How do I **confirm mail is disabled**?
+      - What happens to the **Mail tab**?
+
+  - intent: faq/webmail_access_disabled
+    examples: |
+      - Will **disabling mail stop webmail access**?
+      - Does webmail (Roundcube/Horde) become **unavailable**?
+
+  - intent: faq/existing_mailbox_data
+    examples: |
+      - Will **existing mailbox data be deleted**?
+      - Does the data remain **on disk**?
+
+  - intent: faq/disable_mail_for_specific_domains
+    examples: |
+      - Can I **disable mail for specific domains**?
+      - Where are the **Mail Settings** for a domain?
+
+  # --- .NET Core Installation FAQs (Windows) ---
+  - intent: faq/download_dotnet_core
+    examples: |
+      - Where can I **download .NET Core Hosting Bundle**?
+      - Where is the **latest LTS version** of .NET Core?
+
+  - intent: faq/install_dotnet_core
+    examples: |
+      - How do I **install .NET Core on Windows**?
+      - Should I run the **.exe installer**?
+
+  - intent: faq/verify_dotnet_core_installed
+    examples: |
+      - How can I **verify .NET Core is installed**?
+      - Where are the **Server Components** to refresh?
+
+  - intent: faq/check_dotnet_runtime_version
+    examples: |
+      - How can I **check the runtime version in PowerShell**?
+      - What is the **`dotnet --list-runtimes`** command?
+
+  - intent: faq/multiple_dotnet_versions
+    examples: |
+      - Can I install **multiple .NET versions**?
+      - Can multiple runtimes **coexist**?
+
+  # --- Disk Quota Management FAQs (Windows) ---
+  - intent: faq/enable_disk_quota_management
+    examples: |
+      - How do I **enable disk quota management in Windows**?
+      - Where are the **Quota Settings** for a drive?
+
+  - intent: faq/quota_management_options
+    examples: |
+      - Which **options must I enable** for disk quota?
+      - Should I select **Deny disk space to users exceeding limit**?
+
+  - intent: faq/set_global_quota_limit
+    examples: |
+      - Should I **set a global quota limit**?
+      - Should I select **“Do not limit”**?
+
+  - intent: faq/see_per_user_quotas
+    examples: |
+      - How can I **see per-user quotas**?
+      - Where are **Quota Entries…** located?
+
+  - intent: faq/what_happens_quota_exceeded
+    examples: |
+      - What happens when a user **exceeds their limit**?
+      - Can they save new data after the **quota is reached**?
+
+  - intent: faq/view_quota_usage_powershell
+    examples: |
+      - How can I **view quota usage via PowerShell**?
+      - What is the **`fsutil quota query`** command?
+
+  - intent: faq/quotas_per_drive
+    examples: |
+      - Do **quotas apply per drive**?
+      - Must I **enable them on each partition** manually?
+
+  # --- PHP Version Management FAQs (Linux & Windows) ---
+  - intent: faq/enable_additional_php_versions
+    examples: |
+      - How can I **enable additional PHP versions**?
+      - Where are the **Add/Remove Components** for PHP?
+
+  - intent: faq/verify_php_versions_installed
+    examples: |
+      - How can I **verify PHP versions installed**?
+      - What is the **`plesk bin php_handler --list`** command?
+
+  - intent: faq/change_php_version_specific_site
+    examples: |
+      - How can I **change PHP version for a specific site**?
+      - Where are the **PHP Settings** for a domain?
+
+  - intent: faq/extensions_installed_automatically
+    examples: |
+      - Are **extensions installed automatically**?
+      - Are common extensions like **mysqli, curl, and gd** included?
+
+  - intent: faq/php_isolation_per_domain
+    examples: |
+      - Does each domain have its own **PHP handler**?
+      - Does Plesk **isolate PHP per domain**?
+
+  # --- Git Installation & Version Control FAQs (Windows Plesk) ---
+  - intent: faq/install_git_windows_plesk
+    examples: |
+      - How do I **install Git in Plesk for Windows**?
+      - Where is the **Git Extension**?
+
+  - intent: faq/create_new_git_repository
+    examples: |
+      - How do I **create a new Git repository in Plesk**?
+      - Where do I find **Add Repository** under Domains?
+
+  - intent: faq/automatic_deployment
+    examples: |
+      - Can I **automatically deploy updates from Git**?
+      - How do I enable **Automatic Deployment**?
+
+  - intent: faq/deployment_files_location
+    examples: |
+      - Where are **deployment files stored**?
+      - Is the default directory **`/httpdocs`**?
+
+  - intent: faq/connect_private_repositories
+    examples: |
+      - Can I **connect to private repositories**?
+      - How do I use **SSH keys** or **deploy keys**?
+
+  - intent: faq/remove_git_repository
+    examples: |
+      - How do I **remove a Git repository**?
+      - Where is **Remove Repository** located?
+
+  # --- Plesk Installation FAQs (ETI Linux) ---
+  - intent: faq/start_plesk_installer
+    examples: |
+      - How do I **start the Plesk installer**?
+      - What is the **`sh <(curl ...)`** command to run the installer?
+
+  - intent: faq/repositories_required_plesk
+    examples: |
+      - What **repositories must be enabled before installing Plesk**?
+      - Should I enable **EPEL and CodeReady Builder**?
+
+  - intent: faq/ports_for_plesk_access
+    examples: |
+      - What **ports must be open for Plesk access**?
+      - Which ports are needed for **HTTPS (8443)** and **HTTP (8880)**?
+
+  - intent: faq/access_plesk_after_installation
+    examples: |
+      - How do I **access Plesk after installation**?
+      - What is the URL to access Plesk on **port 8443**?
+
+  - intent: faq/default_plesk_login_credentials
+    examples: |
+      - What are the **default Plesk login credentials**?
+      - What is the default **admin username**?
+
+  - intent: faq/reset_plesk_admin_password
+    examples: |
+      - How do I **reset the Plesk admin password**?
+      - What is the **`plesk bin admin --show-password`** command?
+
+  - intent: faq/repair_broken_installation
+    examples: |
+      - How can I **repair a broken installation**?
+      - What is the **`plesk repair installation`** command?
+
+  # --- LiteSpeed Installation FAQs (ETI Server) ---
+  - intent: faq/install_litespeed
+    examples: |
+      - How do I **install LiteSpeed Web Server on Linux**?
+      - What is the **`rpm -ivh openlitespeed*.rpm`** command?
+
+  - intent: faq/verify_litespeed_installation
+    examples: |
+      - How do I **verify LiteSpeed installation**?
+      - What is the **`lswsctrl status`** command?
+
+  - intent: faq/start_enable_litespeed
+    examples: |
+      - How do I **start and enable the LiteSpeed service**?
+      - What is the **`systemctl enable --now lsws`** command?
+
+  - intent: faq/access_litespeed_admin_panel
+    examples: |
+      - How do I **access the LiteSpeed admin panel**?
+      - What port is the LiteSpeed admin panel on (**7080**)?
+
+  - intent: faq/integrate_litespeed_plesk
+    examples: |
+      - How can I **integrate LiteSpeed with Plesk**?
+      - Where do I specify the **web server path** in the LiteSpeed Extension?
+
+  - intent: faq/apache_litespeed_coexistence
+    examples: |
+      - Can **Apache and LiteSpeed run at the same time**?
+      - Why can only one web server bind to **port 80**?
+
+  - intent: faq/confirm_litespeed_serving
+    examples: |
+      - How do I **confirm LiteSpeed is serving websites**?
+      - What is the **`curl -I`** command to check the server header?
+
+  # --- MSSQL Installation FAQs (Windows Plesk) ---
+  - intent: faq/best_sql_server_edition
+    examples: |
+      - Which **SQL Server edition is best for Plesk**?
+      - Should I use **Microsoft SQL Server 2022 Express (Advanced)**?
+
+  - intent: faq/sql_server_authentication_mode
+    examples: |
+      - What **authentication mode should I select** for SQL Server?
+      - Should I choose **Mixed Mode**?
+
+  - intent: faq/enable_tcpip_mssql
+    examples: |
+      - How can I **enable TCP/IP connections** for MSSQL?
+      - Where is **Protocols for MSSQLSERVER** in Configuration Manager?
+
+  - intent: faq/default_sql_server_port
+    examples: |
+      - What **port does SQL Server use by default**?
+      - Is the default port **1433**?
+
+  - intent: faq/add_sql_server_to_plesk
+    examples: |
+      - How do I **add SQL Server to Plesk**?
+      - Where is **Add Database Server** in Tools & Settings?
+
+  - intent: faq/confirm_mssql_connection_plesk
+    examples: |
+      - How do I **confirm MSSQL connection in Plesk**?
+      - Where does Plesk show a **“Connected” status**?
+
+  # --- MySQL Installation FAQs (ETI Linux) ---
+  - intent: faq/install_mysql_locally
+    examples: |
+      - How do I **install MySQL locally**?
+      - What is the **`sudo dnf localinstall`** command?
+
+  - intent: faq/start_enable_mysql
+    examples: |
+      - How do I **start and enable MySQL**?
+      - What is the **`sudo systemctl enable --now mysqld`** command?
+
+  - intent: faq/find_temporary_root_password
+    examples: |
+      - How do I **find the temporary root password**?
+      - Where do I **`grep 'temporary password'`**?
+
+  - intent: faq/secure_mysql_installation
+    examples: |
+      - How do I **secure MySQL installation**?
+      - What is the **`sudo mysql_secure_installation`** command?
+
+  - intent: faq/move_mysql_data_directory
+    examples: |
+      - How can I **move the MySQL data directory** to a new path?
+      - What is the **`rsync -av`** command to copy the data?
+
+  - intent: faq/reload_system_services
+    examples: |
+      - How do I **reload system services**?
+      - What is the **`sudo systemctl daemon-reload`** command?
+
+  - intent: faq/confirm_mysql_running
+    examples: |
+      - How can I **confirm MySQL is running**?
+      - What is the **`mysql -u root -p`** command?
+
+  # --- Plesk License Installation FAQs ---
+  - intent: faq/install_update_plesk_license
+    examples: |
+      - How do I **install or update the Plesk license**?
+      - Where is **License Information** in Tools & Settings?
+
+  - intent: faq/activate_new_license_key
+    examples: |
+      - How do I **activate a new license key**?
+      - Where do I enter the **activation code**?
+
+  - intent: faq/retrieve_new_key_automatically
+    examples: |
+      - Can I **retrieve a new key automatically**?
+      - What happens when I click **Retrieve Keys**?
+
+  - intent: faq/view_license_information_cli
+    examples: |
+      - How do I **view license information using CLI**?
+      - What is the **`plesk bin license --show`** command?
+
+  - intent: faq/what_happens_if_license_expires
+    examples: |
+      - What happens if my **license expires**?
+      - Does Plesk enter **read-only mode**?
+
+  - intent: faq/license_validation_frequency
+    examples: |
+      - How often does **Plesk validate a license**?
+      - Does license verification occur **every 24 hours**?
+
+  # --- Site.Pro Installation FAQs ---
+  - intent: faq/install_sitepro_builder
+    examples: |
+      - How do I **install Site.Pro Builder in Plesk**?
+      - What is the **`plesk bin extension --install`** command?
+
+  - intent: faq/check_sitepro_installed
+    examples: |
+      - How do I **check if Site.Pro is installed successfully**?
+      - Where do I look in **Extensions → Installed**?
+
+  - intent: faq/access_sitepro_builder
+    examples: |
+      - How can I **access Site.Pro Builder from the customer panel**?
+      - Where is **Website Builder → Site.Pro Builder**?
+
+  - intent: faq/update_sitepro
+    examples: |
+      - How do I **update Site.Pro to the latest version**?
+      - Should I **reinstall** the latest zip file?
+
+  # --- Move Plesk Log Files FAQs (Linux) ---
+  - intent: faq/why_move_plesk_logs_linux
+    examples: |
+      - Why should I **move Plesk logs to another directory**?
+      - How do I **free up space** on the main partition?
+
+  - intent: faq/stop_plesk_services_logs
+    examples: |
+      - How do I **stop Plesk services before moving logs**?
+      - What is the **`systemctl stop psa`** command?
+
+  - intent: faq/copy_log_files_safely
+    examples: |
+      - How do I **copy log files safely to the new directory**?
+      - What is the **`rsync -a`** command?
+
+  - intent: faq/delete_old_log_directory
+    examples: |
+      - How can I **delete the old log directory**?
+      - What is the **`rm -rf`** command?
+
+  - intent: faq/link_new_log_directory
+    examples: |
+      - How do I **link the new directory to the old path**?
+      - What is the **`ln -s`** command for the symbolic link?
+
+  - intent: faq/verify_new_log_directory_linux
+    examples: |
+      - How do I **check that Plesk is writing logs to the new directory**?
+      - How can I confirm the **symbolic link is active**?
+
+  # --- Website Permission Repair FAQs ---
+  - intent: faq/fix_file_folder_permissions
+    examples: |
+      - How do I **fix file and folder permission issues** in Plesk?
+      - What is the **`plesk repair web example.com`** command?
+
+  - intent: faq/repair_all_websites
+    examples: |
+      - Can I **repair all websites at once**?
+      - What is the **`plesk repair web -all`** command?
+
+  - intent: faq/repair_downtime
+    examples: |
+      - Does this **repair process cause downtime**?
+      - Does it only **reload Apache/Nginx configuration**?
+
+  - intent: faq/repair_via_gui
+    examples: |
+      - Can I use **GUI instead of CLI for repair**?
+      - Where is the **Repair Kit** in Tools & Settings?
+
+  - intent: faq/check_repair_fails
+    examples: |
+      - What should I **check if repair fails**?
+      - Where is the **`panel.log`** file?
+
+  - intent: faq/safe_to_run_on_production
+    examples: |
+      - Is it **safe to run this on production servers**?
+      - Is this the **recommended Plesk repair method** for live sites?
+
+  # --- Domain Forwarding Setup FAQs (Windows) ---
+  - intent: faq/enable_domain_forwarding_permission
+    examples: |
+      - How do I **enable domain forwarding permission for customers**?
+      - Where is **Domain Management** in Service Plans → Permissions?
+
+  - intent: faq/set_up_domain_forwarding
+    examples: |
+      - How can I **set up domain forwarding in Plesk**?
+      - Where is **Hosting Type → Forwarding**?
+
+  - intent: faq/supported_redirection_types
+    examples: |
+      - What **types of redirection are supported**?
+      - Does Plesk support **Permanent (301) and Temporary (302)** redirects?
+
+  - intent: faq/forwarding_to_https
+    examples: |
+      - Can I **forward to HTTPS URLs**?
+      - Are **secure destinations** fully supported?
+
+  - intent: faq/disable_domain_forwarding
+    examples: |
+      - How can I **disable domain forwarding**?
+      - How do I **revert to Website Hosting**?
+
+  # --- Move Plesk Log Files (Windows) ---
+  - intent: faq/move_plesk_logs_windows
+    examples: |
+      - How can I **move Plesk logs to another drive**?
+      - Where do I create the new folder, e.g., **`D:\PleskLogs\`**?
+
+  - intent: faq/log_directory_windows_permissions
+    examples: |
+      - Which **accounts need access** to the new Windows log directory?
+      - Should I grant **Full Control to `psaadm`, `psacln`, and `IIS_IUSRS`**?
+
+  - intent: faq/stop_services_moving_logs_windows
+    examples: |
+      - How do I **stop services before moving logs** on Windows?
+      - What are the **`net stop`** commands for Plesk services?
+
+  - intent: faq/move_logs_windows_command
+    examples: |
+      - How can I **move logs to the new directory** on Windows?
+      - What is the **`robocopy`** command to move logs?
+
+  - intent: faq/link_new_log_directory_windows
+    examples: |
+      - How do I **link the new folder location** on Windows?
+      - What is the **`mklink /D`** command?
+
+  - intent: faq/why_use_symbolic_links_logs
+    examples: |
+      - Why use **symbolic links instead of config edits**?
+      - Does it ensure Plesk continues writing logs **without internal reconfiguration**?
+
+  # --- Setup Local RPM Repository in Plesk Linux ---
+  - intent: faq/why_use_local_rpm_repo
+    examples: |
+      - Why use a **local RPM repo in Plesk**?
+      - Does it **speed up package installations**?
+
+  - intent: faq/create_repo_directory
+    examples: |
+      - How can I **create the repo directory**?
+      - What is the **`mkdir -p`** command?
+
+  - intent: faq/create_repository_metadata
+    examples: |
+      - How do I **create repository metadata**?
+      - What is the **`createrepo`** command?
+
+  - intent: faq/make_repo_available
+    examples: |
+      - How do I **make the local repo available system-wide**?
+      - Which file should I create/edit in **`/etc/yum.repos.d/`**?
+
+  - intent: faq/test_local_repo
+    examples: |
+      - How do I **test the repo**?
+      - What is the **`dnf repolist`** command?
+
+  # --- Password Error While Renaming Domain (Linux) ---
+  - intent: faq/password_error_domain_rename
+    examples: |
+      - Why does a **password error occur during domain rename**?
+      - Is it due to **PAM password-history restrictions**?
+
+  - intent: faq/disable_pam_restriction
+    examples: |
+      - How do I **disable the PAM restriction temporarily**?
+      - What is the **`sed -ri`** command to comment out the `pam_pwhistory` line?
+
+  - intent: faq/set_remember_zero
+    examples: |
+      - How do I set **`remember=0`** for password history?
+      - What is the **`sed -ri`** command to modify `pam_unix.so`?
+
+  - intent: faq/reset_user_password
+    examples: |
+      - How can I **reset the user’s password**?
+      - What is the **`chpasswd`** command using a new random password?
+
+  - intent: faq/restore_pam_configuration
+    examples: |
+      - How do I **restore PAM configuration after rename**?
+      - Which **`.bak` file** should I copy back?
+
+  - intent: faq/root_cause_password_issue
+    examples: |
+      - What’s the **root cause of this issue**?
+      - Does the **password-history module prevent resetting existing users’ credentials**?
+
+  # --- Imunify360 Update FAQs ---
+  - intent: faq/update_imunify360_manually
+    examples: |
+      - How do I **update Imunify360 manually**?
+      - What is the **`imunify360-agent update`** command?
+
+  - intent: faq/confirm_antivirus_definitions
+    examples: |
+      - How can I **confirm antivirus definitions are up to date**?
+      - Where is the **cron job** located?
+
+  - intent: faq/imunify360_update_frequency
+    examples: |
+      - How often does **Imunify360 check for updates**?
+      - Is the check performed **Daily** through cron?
+
+  - intent: faq/verify_imunify360_version
+    examples: |
+      - How do I **verify Imunify360 version**?
+      - What is the **`imunify360-agent version`** command?
+
+  # --- Resource Limit Reached Policy (Plesk) ---
+  - intent: faq/resource_limit_reached_action
+    examples: |
+      - What happens when the **resource limit is reached in Plesk**?
+      - Does Plesk enforce the selected **overuse policy**?
+
+  - intent: faq/overuse_policy_options
+    examples: |
+      - What are the **3 Overuse Policy options**?
+      - What is the difference between **"Overuse is not allowed"** and **"Overuse allowed (all)"**?
+
+  - intent: faq/overuse_not_allowed_meaning
+    examples: |
+      - What does **“Overuse is not allowed”** mean?
+      - Does Plesk **suspend the subscription** if the limit is reached?
+
+  - intent: faq/overuse_disk_traffic_allowed
+    examples: |
+      - What is **“Overuse of disk space and traffic is allowed”**?
+      - Is this setting suitable for **temporary spikes in usage**?
+
+  - intent: faq/best_practice_overuse_policy
+    examples: |
+      - What’s the **best practice for shared servers**?
+      - Should I set **“Overuse is not allowed”**?
+
+  # --- LiteSpeed Bandwidth Configuration (Linux) ---
+  - intent: faq/litespeed_bandwidth_throttling
+    examples: |
+      - What is the purpose of **bandwidth throttling in LiteSpeed** for Plesk?
+      - Does it prevent one domain from consuming **excessive network or CPU bandwidth**?
+
+  - intent: faq/ideal_bandwidth_all_limit
+    examples: |
+      - What’s the ideal **“BandWidth all” limit**?
+      - Should I set the limit to **2,000,000 bytes/s**?
+
+  - intent: faq/minbandwidth_limit
+    examples: |
+      - What’s **“MinBandWidth all”**?
+      - Should I set the minimum bandwidth limit to **-1**?
+
+  - intent: faq/large_file_limit
+    examples: |
+      - What is **“LargeFileLimit”**?
+      - Should I throttle files above **500 KB**?
+
+  - intent: faq/vhostbandwidthlimit
+    examples: |
+      - What is **“VhostBandwidthLimit”**?
+      - Should I cap per subscription usage at **8,000,000 bytes/s**?
+
+  - intent: faq/maxconnperclient
+    examples: |
+      - What’s **“MaxConnPerClient”**?
+      - Should I limit **concurrent connections per IP** to 20?
+
+  # --- Optimum IIS Application Pool Settings ---
+  - intent: faq/tuning_iis_pool_settings
+    examples: |
+      - Why is **tuning IIS pool settings important**?
+      - Does it balance **performance and memory use**?
+
+  - intent: faq/iis_32bit_applications
+    examples: |
+      - Should **32-bit applications be enabled**?
+      - Does enabling 32-bit save **RAM**?
+
+  - intent: faq/load_user_profile
+    examples: |
+      - What about **“Load User Profile”**?
+      - Should I **disable Load User Profile**?
+
+  - intent: faq/number_of_worker_processes
+    examples: |
+      - How many **worker processes** should I use?
+      - Should I keep the worker process count at **1 per pool**?
+
+  - intent: faq/cpu_limit_per_pool
+    examples: |
+      - What is the **CPU limit per pool**?
+      - Should the CPU limit be **70%**?
+
+  - intent: faq/recommended_recycle_interval
+    examples: |
+      - What’s the **recommended idle timeout**?
+      - What is the recommended **recycle interval**?
+
+  # --- General Web Hosting (Batch 2) ---
+  - intent: faq/fair_usage_policy_shared
+    examples: |
+      - What is the **Fair Usage Policy for shared web hosting**?
+      - Does the Fair Usage Policy limit **CPU, memory, and bandwidth**?
+
+  - intent: faq/files_not_allowed_unlimited
+    examples: |
+      - What types of **files are not allowed in unlimited web hosting**?
+      - Are **bulk file storage or backups** permitted?
+
+  - intent: faq/exceed_limits_action
+    examples: |
+      - What happens if my website **exceeds bandwidth or disk usage limits**?
+      - Will my account be **suspended** for high resource use?
+
+  - intent: faq/etisalat_enforce_limits
+    examples: |
+      - How does **Etisalat enforce resource limits**?
+      - What limits are monitored by the system (**CPU, RAM, connections**)?
+
+  # --- Plesk Control Panel (Batch 2) ---
+  - intent: faq/plesk_login_url
+    examples: |
+      - How can I **log in to my Plesk Control Panel**?
+      - What is the **`https://yourdomain.com:8443`** URL for login?
+
+  - intent: faq/access_websites_domains
+    examples: |
+      - Where can I find the **“Websites & Domains”** section?
+      - Is it on the **left sidebar**?
+
+  - intent: faq/change_php_version_dashboard
+    examples: |
+      - How do I **change the PHP version for my website**?
+      - Where is **Dashboard > PHP**?
+
+  - intent: faq/access_file_manager
+    examples: |
+      - How do I **access File Manager**?
+      - Where is **Dashboard > Files**?
+
+  - intent: faq/create_remove_subdomain
+    examples: |
+      - How do I **create or remove a subdomain**?
+      - Where is **Add Subdomain** located?
+
+  - intent: faq/remove_domain
+    examples: |
+      - How do I **remove a domain**?
+      - Where is the **Remove Website** button?
+
+  - intent: faq/access_phpmyadmin
+    examples: |
+      - How can I **access phpMyAdmin**?
+      - Where is **Databases > phpMyAdmin**?
+
+  - intent: faq/create_delete_user_account_batch2
+    examples: |
+      - How do I **create or delete a user account**?
+      - Where is **Users > Create User Account**?
+
+  - intent: faq/add_additional_admin_account
+    examples: |
+      - How can I **add an additional admin account**?
+      - Where is **Tools & Settings > Additional Administrator Accounts**?
+
+  - intent: faq/add_domain_alias
+    examples: |
+      - How do I **add a domain alias**?
+      - Where is **Add Domain Alias**?
+
+  - intent: faq/set_password_policies
+    examples: |
+      - How do I **set up password policies**?
+      - Where is **Tools & Settings > Security Policy**?
+
+  # --- Database Management (Batch 2) ---
+  - intent: faq/create_new_database_batch2
+    examples: |
+      - How can I **create a new database**?
+      - Where is **Databases > Add Database**?
+
+  - intent: faq/export_import_database_batch2
+    examples: |
+      - How do I **export or import a database**?
+      - What are the **Export Dump** and **Import Dump** options?
+
+  - intent: faq/create_import_mssql_database
+    examples: |
+      - How do I **create or import an MSSQL database**?
+      - Where is **Import Dump for MSSQL**?
+
+  - intent: faq/connect_mssql_ssms
+    examples: |
+      - How can I **connect to MSSQL using SQL Server Management Studio (SSMS)**?
+      - Where is **Connection Info** for MSSQL?
+
+  - intent: faq/get_database_connection_string
+    examples: |
+      - How do I **get the database connection string**?
+      - Where do I view **host, username, and password details**?
+
+  - intent: faq/recommended_mysql_limits
+    examples: |
+      - What are the **recommended MySQL limits**?
+      - What are the recommended values for **Max connections and Buffer pool**?
+
+  # --- Security & Access (Batch 2) ---
+  - intent: faq/enable_mfa_plesk
+    examples: |
+      - How do I **enable Multi-Factor Authentication (MFA) in Plesk**?
+      - Where is **Profile Settings > MFA Settings**?
+
+  - intent: faq/enable_prohibited_domain_names
+    examples: |
+      - How can I enable the **“Prohibited Domain Names”** feature?
+      - Where is **Tools & Settings > Security**?
+
+  - intent: faq/protect_directories_passwords
+    examples: |
+      - How can I **protect directories with passwords**?
+      - Where is **Password-Protected Directories**?
+
+  - intent: faq/set_strong_passwords_users
+    examples: |
+      - How can I **set up strong passwords for users**?
+      - Where is **Edit Profile** to update the password?
+
+  # --- Backup & Restore (Batch 2) ---
+  - intent: faq/schedule_automatic_backups_batch2
+    examples: |
+      - How do I **schedule automatic backups**?
+      - Where is **Backup & Restore > Schedule**?
+
+  - intent: faq/perform_manual_backup
+    examples: |
+      - How do I **perform a manual backup**?
+      - Where is **Backup Manager > Back Up Now**?
+
+  - intent: faq/restore_website_database
+    examples: |
+      - How do I **restore my website or database**?
+      - Where is the **Restore** button?
+
+  - intent: faq/disk_space_required_backups
+    examples: |
+      - How much **disk space is required for backups**?
+      - What is the example storage capacity for **14 days of retention**?
+
+  - intent: faq/backup_exceeds_space
+    examples: |
+      - What happens if my **backup exceeds the allowed space**?
+      - Will **older backups be deleted**?
+
+  # --- Website Builder & CMS (Batch 2) ---
+  - intent: faq/install_wordpress_batch2
+    examples: |
+      - How can I **install WordPress**?
+      - Where is **Applications > WordPress > Install**?
+
+  - intent: faq/install_activate_wp_theme
+    examples: |
+      - How do I **install or activate a WordPress theme**?
+      - Where is **WordPress > Themes**?
+
+  - intent: faq/create_plugin_theme_sets
+    examples: |
+      - How can I **create plugin/theme sets using WP Toolkit**?
+      - Where is **WP Toolkit > Sets > Create Set**?
+
+  - intent: faq/install_joomla_drupal
+    examples: |
+      - How do I **install Joomla or Drupal**?
+      - Where is **Applications > Joomla/Drupal**?
+
+  - intent: faq/install_sitejet
+    examples: |
+      - How can I **install Sitejet in Plesk**?
+      - Where is **Extensions > Search Sitejet Builder**?
+
+  # --- SEO & Optimization FAQs (Batch 2) ---
+  - intent: faq/what_is_seo_toolkit_batch2
+    examples: |
+      - What is the **SEO Toolkit in Plesk**?
+      - Does it help monitor and improve **SEO performance**?
+
+  - intent: faq/install_seo_toolkit
+    examples: |
+      - How can I **install the SEO Toolkit extension**?
+      - Where is **Extensions > Catalog**?
+
+  - intent: faq/access_seo_toolkit
+    examples: |
+      - How do I **access the SEO Toolkit in the customer panel**?
+      - Where is **Websites & Domains > SEO Toolkit**?
+
+  - intent: faq/scan_analyze_website_seo
+    examples: |
+      - How can I **scan and analyze my website using the SEO Toolkit**?
+      - Where do I view results under **Rank Tracking**?
+
+  - intent: faq/seo_toolkit_features
+    examples: |
+      - What **features does the SEO Toolkit offer**?
+      - Does it provide **keyword tracking and Google Search Console integration**?
+
+  # --- Development & Application FAQs (Batch 2) ---
+  - intent: faq/install_nodejs_batch2
+    examples: |
+      - How can I **install Node.js in Plesk**?
+      - Where is **Extensions > Search Node.js**?
+
+  - intent: faq/deploy_aspnet_batch2
+    examples: |
+      - How do I **deploy an ASP.NET application**?
+      - Where do I upload files for **ASP.NET deployment**?
+
+  - intent: faq/install_older_php
+    examples: |
+      - Can I **install older PHP versions like PHP 7.4**?
+      - Where is **Tools & Settings > Updates > Add/Remove Components**?
+
+  - intent: faq/create_custom_email_notifications
+    examples: |
+      - How do I **create custom email notifications**?
+      - Where is **Tools & Settings > Notifications > Edit Template**?
+
+  - intent: faq/enable_2fa_all_applications
+    examples: |
+      - How can I **enable 2FA across all applications**?
+      - Should I use **Google Authenticator**?
