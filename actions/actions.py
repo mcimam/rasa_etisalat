@@ -26,7 +26,6 @@ class ActionDefaultFallback(Action):
 
         dispatcher.utter_message(text="I'm sorry, I didn't understand that.")
         active_form = tracker.active_loop.get("name")
-        print(f"Active form: {active_form}")
         if not active_form:
             dispatcher.utter_message(text="Would you like to speak to a human operator? (yes/no)")
 
@@ -61,7 +60,7 @@ class ActionCallOperator(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         customer_email = tracker.get_slot("customer_email")
-
+        print("ASKING OPERATOR")
         dispatcher.utter_message(text="Connecting to Operator....")
         dispatcher.utter_message(json_message={"token": TOKEN_OPERATOR, "category": tracker.get_slot('issue_category'), "email": customer_email})
         return [ConversationPaused()]
